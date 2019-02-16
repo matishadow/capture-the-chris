@@ -54,25 +54,21 @@
             <div class="col-sm-4">Characters</div>
             <div class="col-sm-8">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="uppercaseSpaceCheckBox" value="@((int)CharacterSpace.Uppercase)" checked>
                     <label class="form-check-label" for="uppercaseSpaceCheckBox">
                         ABCDEFGHIJKLMNOPQRSTUVWXYZ
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="lowercaseSpaceCheckBox" value="@((int)CharacterSpace.Lowercase)" checked>
                     <label class="form-check-label" for="lowercaseSpaceCheckBox">
                         abcdefghijklmnopqrstuvwxyz
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="digitsSpaceCheckBox" value="@((int)CharacterSpace.Digits)" checked>
                     <label class="form-check-label" for="digitsSpaceCheckBox">
                         0123456789
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="specialSpaceCheckBox" value="@((int)CharacterSpace.Special)" checked>
                     <label class="form-check-label" for="specialSpaceCheckBox">
                         `~!@@#$%^&*()_-+={}|[]\:";'<>?,./
                     </label>
@@ -118,10 +114,6 @@
         $("#sha256RadioButton").on("change", updateGeneratedPassword);
         $("#sha512RadioButton").on("change", updateGeneratedPassword);
 
-        refreshCharacterSpace('#uppercaseSpaceCheckBox', '@((int)CharacterSpace.Uppercase)');
-        refreshCharacterSpace('#lowercaseSpaceCheckBox', '@((int)CharacterSpace.Lowercase)');
-        refreshCharacterSpace('#digitsSpaceCheckBox', '@((int)CharacterSpace.Digits)');
-        refreshCharacterSpace('#specialSpaceCheckBox', '@((int)@CharacterSpace.Special)');
     });
 
     var updateGeneratedPassword = function() {
@@ -153,7 +145,6 @@
 
     var refreshCharacterSpace = function (checkboxId, characterSpace) {
         $(checkboxId).on('change', function () {
-            this.value = this.checked ? characterSpace : '@((int)CharacterSpace.None)';
             updateGeneratedPassword();
         });
     }

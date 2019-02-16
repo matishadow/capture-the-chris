@@ -1,0 +1,161 @@
+﻿@using CaptureTheChris.Enums
+@{
+    ViewBag.Title = "Portkable Pass";
+}
+
+<div class="container pp-container">
+        <div class="jumbotron text-center">
+            <h1>Portkable Pass</h1>
+        </div>
+    
+    <form>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Domain:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="domainNameTextBox">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-4 col-form-label">Password:</label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" id="masterPasswordTextBox">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-4 col-form-label">Generated Password:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="generatedPassword">
+            </div>
+        </div>
+        <br/> <br />
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Hash function</legend>
+                <div class="col-sm-8">
+                    <div class="form-check">
+                        <label class="form-check-label" for="gridRadios1">
+                            SHA-1
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="gridRadios2">
+                            SHA-256
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="gridRadios2">
+                            SHA-512
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <div class="col-sm-4">Characters</div>
+            <div class="col-sm-8">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="uppercaseSpaceCheckBox" value="@((int)CharacterSpace.Uppercase)" checked>
+                    <label class="form-check-label" for="uppercaseSpaceCheckBox">
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="lowercaseSpaceCheckBox" value="@((int)CharacterSpace.Lowercase)" checked>
+                    <label class="form-check-label" for="lowercaseSpaceCheckBox">
+                        abcdefghijklmnopqrstuvwxyz
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="digitsSpaceCheckBox" value="@((int)CharacterSpace.Digits)" checked>
+                    <label class="form-check-label" for="digitsSpaceCheckBox">
+                        0123456789
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="specialSpaceCheckBox" value="@((int)CharacterSpace.Special)" checked>
+                    <label class="form-check-label" for="specialSpaceCheckBox">
+                        `~!@@#$%^&*()_-+={}|[]\:";'<>?,./
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">Password length</div>
+            <div class="col-sm-8">
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <input type="range" min="1" max="30" value="16" class="slider-max-width" id="passwordRange">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control form-control-sm" id="lengthValue" value="16">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var slider = $("#passwordRange");
+        var output = $("#lengthValue");
+
+        slider.on("input",
+            function() {
+                output.val(slider.val());
+                updateGeneratedPassword();
+            });
+        output.on("input",
+            function () {
+                slider.val(output.val());
+                updateGeneratedPassword();
+            });
+
+        $("#domainNameTextBox").on("input", updateGeneratedPassword);
+        $("#masterPasswordTextBox").on("input", updateGeneratedPassword);
+
+        $("#sha1RadioButton").on("change", updateGeneratedPassword);
+        $("#sha256RadioButton").on("change", updateGeneratedPassword);
+        $("#sha512RadioButton").on("change", updateGeneratedPassword);
+
+        refreshCharacterSpace('#uppercaseSpaceCheckBox', '@((int)CharacterSpace.Uppercase)');
+        refreshCharacterSpace('#lowercaseSpaceCheckBox', '@((int)CharacterSpace.Lowercase)');
+        refreshCharacterSpace('#digitsSpaceCheckBox', '@((int)CharacterSpace.Digits)');
+        refreshCharacterSpace('#specialSpaceCheckBox', '@((int)@CharacterSpace.Special)');
+    });
+
+    var updateGeneratedPassword = function() {
+        var passwordGeneration = {
+            domainName: $('#domainNameTextBox').val(),
+            masterPassword: $('#masterPasswordTextBox').val(),
+            hashFunction: $('.hashCheckBox:checked').val(),
+            characterSpace: $('#uppercaseSpaceCheckBox').val() |
+                $('#lowercaseSpaceCheckBox').val() |
+                $('#digitsSpaceCheckBox').val() |
+                $('#specialSpaceCheckBox').val(),
+            passwordLength: $('#lengthValue').val()
+        };
+
+        if (!passwordGeneration.domainName || !passwordGeneration.masterPassword)
+            return;
+
+        $.ajax({
+            url: "/Home/GeneratePassword",
+            type: "POST",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(passwordGeneration),
+            success: function (result) {
+                $('#generatedPassword').val(unescape(result.Value));
+            }
+        });
+    }
+
+    var refreshCharacterSpace = function (checkboxId, characterSpace) {
+        $(checkboxId).on('change', function () {
+            this.value = this.checked ? characterSpace : '@((int)CharacterSpace.None)';
+            updateGeneratedPassword();
+        });
+    }
+
+</script>

@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SimonSaysColorGenerator.cs" />
+    <Compile Include="SimonSaysGame.cs" />
     <Compile Include="SimonSaysRandomGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

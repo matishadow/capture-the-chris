@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Web", "CaptureTheChris.Web\CaptureTheChris.Web.csproj", "{E1704B19-B8C8-4042-8D91-A5D9AFF2239A}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureTheChris.Enums", "CaptureTheChris.Enums\CaptureTheChris.Enums.csproj", "{F3D310AB-5FEB-4FAD-B7FF-3A203C1A68C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureTheChris.Interfaces", "CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj", "{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Hangman", "CaptureTheChris.Hangman\CaptureTheChris.Hangman.csproj", "{95EB598F-EE1E-463B-BC28-AD480EAF8E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Randomness", "CaptureTheChris.Randomness\CaptureTheChris.Randomness.csproj", "{DEA19E8D-B035-4FAF-A6EE-757E808EE225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,12 +29,6 @@ Global
 		{17802973-EF80-4F9A-A430-06EDB75EDE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17802973-EF80-4F9A-A430-06EDB75EDE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17802973-EF80-4F9A-A430-06EDB75EDE77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46BCD480-B236-4E11-93FF-5E925549E71F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{F3D310AB-5FEB-4FAD-B7FF-3A203C1A68C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3D310AB-5FEB-4FAD-B7FF-3A203C1A68C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D310AB-5FEB-4FAD-B7FF-3A203C1A68C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,14 +37,14 @@ Global
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{561C64CE-A705-486F-863B-C577FAF48AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{561C64CE-A705-486F-863B-C577FAF48AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{561C64CE-A705-486F-863B-C577FAF48AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{561C64CE-A705-486F-863B-C577FAF48AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA19E8D-B035-4FAF-A6EE-757E808EE225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA19E8D-B035-4FAF-A6EE-757E808EE225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA19E8D-B035-4FAF-A6EE-757E808EE225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA19E8D-B035-4FAF-A6EE-757E808EE225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

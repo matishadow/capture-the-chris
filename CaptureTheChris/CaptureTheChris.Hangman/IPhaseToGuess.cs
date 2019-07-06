@@ -4,6 +4,8 @@ namespace CaptureTheChris.Hangman
     {
         LetterToGuess this[int index] { get; }
         bool AreAllLettersGuessed();
-        bool TryGuessingLetter(char guess);
+        bool TryGuessing(char guess);
+        bool TryGuessing(string guess);
+        string GetVisiblePhase();
     }
 }

@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.GuessNumber
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.GameLogic", "CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj", "{4C52104B-30D1-4663-B92B-A0A2F8256FB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Data", "CaptureTheChris.Data\CaptureTheChris.Data.csproj", "{EEF3AC6B-DEE0-4D6E-9403-CAB76B7984DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Flags", "CaptureTheChris.Flags\CaptureTheChris.Flags.csproj", "{EEF3AC6B-DEE0-4D6E-9403-CAB76B7984DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Trivia", "CaptureTheChris.Trivia\CaptureTheChris.Trivia.csproj", "{1999382E-93DD-49D7-B97F-0C0632A22CEA}"
 EndProject

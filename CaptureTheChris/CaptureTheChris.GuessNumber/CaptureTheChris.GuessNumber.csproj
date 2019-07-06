@@ -42,9 +42,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaptureTheChris.Data\CaptureTheChris.Data.csproj">
+    <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
       <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
-      <Name>CaptureTheChris.Data</Name>
+      <Name>CaptureTheChris.Flags</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
       <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>

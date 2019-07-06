@@ -7,8 +7,8 @@
     <ProjectGuid>{EEF3AC6B-DEE0-4D6E-9403-CAB76B7984DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaptureTheChris.Data</RootNamespace>
-    <AssemblyName>CaptureTheChris.Data</AssemblyName>
+    <RootNamespace>CaptureTheChris.Flags</RootNamespace>
+    <AssemblyName>CaptureTheChris.Flags</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

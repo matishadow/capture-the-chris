@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CaptureTheChris.Data.Properties {
+namespace CaptureTheChris.Flags.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

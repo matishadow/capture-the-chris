@@ -5,7 +5,7 @@ namespace CaptureTheChris.Trivia
 {
     public class TriviaGame : Game, IGame
     {
-        public TriviaGame() : base(Data.Properties.Resources.FlagTrivia)
+        public TriviaGame() : base(Flags.Properties.Resources.FlagTrivia)
         {
         }
 

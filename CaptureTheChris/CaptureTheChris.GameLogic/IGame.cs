@@ -5,5 +5,6 @@
         bool IsWon { get; }
         bool IsRunning { get; }
         void StartGame();
+        string GetFlag();
     }
 }

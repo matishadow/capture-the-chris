@@ -9,6 +9,7 @@ namespace CaptureTheChris.Hangman
         private int tries;
         
         private IPhaseToGuess phaseToGuess;
+
         public override bool IsWon
         {
             get => phaseToGuess.AreAllLettersGuessed();
@@ -36,7 +37,7 @@ namespace CaptureTheChris.Hangman
         }
 
 
-        public HangmanGame(IRandomWordGenerator randomWordGenerator)
+        public HangmanGame(IRandomWordGenerator randomWordGenerator) : base(Data.Properties.Resources.FlagHangman)
         {
             this.randomWordGenerator = randomWordGenerator;
         }
@@ -49,7 +50,7 @@ namespace CaptureTheChris.Hangman
             Tries = 7;
             IsRunning = true;
         }
-        
+
         public void Guess(char guess) 
         {
             GuessInternal(guess);

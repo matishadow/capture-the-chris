@@ -10,6 +10,7 @@ namespace CaptureTheChris.GuessNumber
         private readonly IRandomNumberGenerator randomNumberGenerator;
 
         public GuessNumberGame(IRandomNumberGenerator randomNumberGenerator)
+            : base(Data.Properties.Resources.FlagGuessNumber)
         {
             this.randomNumberGenerator = randomNumberGenerator;
         }
@@ -21,14 +22,19 @@ namespace CaptureTheChris.GuessNumber
         public override void StartGame()
         {
             numberToGuess = randomNumberGenerator.GetRandomInteger(100);
-            
+
             IsRunning = true;
+        }
+
+        public override string GetFlag()
+        {
+            return IsWon ? CaptureTheChris.Data.Properties.Resources.FlagGuessNumber : string.Empty;
         }
 
         public void Guess(int number)
         {
             if (number != numberToGuess) return;
-            
+
             IsWon = true;
             numberToGuess = null;
             IsRunning = false;

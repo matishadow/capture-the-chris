@@ -8,6 +8,7 @@ namespace CaptureTheChris.GuessNumber
     {
         private int? numberToGuess;
         private readonly IRandomNumberGenerator randomNumberGenerator;
+        private bool isWon;
 
         public GuessNumberGame(IRandomNumberGenerator randomNumberGenerator)
             : base(Data.Properties.Resources.FlagGuessNumber)
@@ -15,7 +16,15 @@ namespace CaptureTheChris.GuessNumber
             this.randomNumberGenerator = randomNumberGenerator;
         }
 
-        public override bool IsWon { get; protected set; }
+        public override bool IsWon
+        {
+            get => isWon;
+            protected set
+            {
+                isWon = value;
+                Data.Properties.Settings.Default.IsGuessNumberWon = true;
+            }
+        }
 
         public override bool IsRunning { get; protected set; }
 

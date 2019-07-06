@@ -7,15 +7,18 @@ namespace CaptureTheChris.Hangman
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
+        private bool isWon;
         
         private IPhaseToGuess phaseToGuess;
 
         public override bool IsWon
         {
-            get => phaseToGuess.AreAllLettersGuessed();
-            
+            get => isWon;
+
             protected set
             {
+                isWon = value;
+                Data.Properties.Settings.Default.IsHangmanWon = true;
             }
         }
 
@@ -69,6 +72,8 @@ namespace CaptureTheChris.Hangman
             
             if (!wasGuessSuccessful)
                 Tries -= 1;
+            else if (phaseToGuess.AreAllLettersGuessed())
+                IsWon = true;
         }
 
         public string GetVisiblePhase()

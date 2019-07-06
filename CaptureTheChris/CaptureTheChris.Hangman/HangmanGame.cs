@@ -9,7 +9,15 @@ namespace CaptureTheChris.Hangman
         private int tries;
         
         private IPhaseToGuess phaseToGuess;
-        public override bool IsWon => phaseToGuess.AreAllLettersGuessed();
+        public override bool IsWon
+        {
+            get => phaseToGuess.AreAllLettersGuessed();
+            
+            protected set
+            {
+            }
+        }
+
         public override bool IsRunning { get; protected set; }
 
         public int Tries

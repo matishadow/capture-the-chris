@@ -10,7 +10,7 @@ namespace CaptureTheChris.GameLogic
                 throw new InvalidOperationException("Cannot play when game is not running.");
         }
 
-        public abstract bool IsWon { get; }
+        public abstract bool IsWon { get; protected set; }
         public abstract bool IsRunning { get; protected set; }
         public abstract void StartGame();
     }

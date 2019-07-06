@@ -66,6 +66,10 @@
     <None Include="Resources\google-10000-english-usa-no-swears-long.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
+      <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
+      <Name>CaptureTheChris.GameLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
       <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
       <Name>CaptureTheChris.Interfaces</Name>

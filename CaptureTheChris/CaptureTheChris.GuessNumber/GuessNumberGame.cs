@@ -11,7 +11,7 @@ namespace CaptureTheChris.GuessNumber
         private bool isWon;
 
         public GuessNumberGame(IRandomNumberGenerator randomNumberGenerator)
-            : base(Data.Properties.Resources.FlagGuessNumber)
+            : base(Flags.Properties.Resources.FlagGuessNumber)
         {
             this.randomNumberGenerator = randomNumberGenerator;
         }
@@ -22,7 +22,7 @@ namespace CaptureTheChris.GuessNumber
             protected set
             {
                 isWon = value;
-                Data.Properties.Settings.Default.IsGuessNumberWon = true;
+                Flags.Properties.Settings.Default.IsGuessNumberWon = true;
             }
         }
 
@@ -37,7 +37,7 @@ namespace CaptureTheChris.GuessNumber
 
         public override string GetFlag()
         {
-            return IsWon ? CaptureTheChris.Data.Properties.Resources.FlagGuessNumber : string.Empty;
+            return IsWon ? CaptureTheChris.Flags.Properties.Resources.FlagGuessNumber : string.Empty;
         }
 
         public void Guess(int number)

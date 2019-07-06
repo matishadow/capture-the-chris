@@ -30,7 +30,7 @@ namespace CaptureTheChris.Hangman
         }
 
 
-        public HangmanGame(IRandomWordGenerator randomWordGenerator) : base(Data.Properties.Resources.FlagHangman)
+        public HangmanGame(IRandomWordGenerator randomWordGenerator) : base(Flags.Properties.Resources.FlagHangman)
         {
             this.randomWordGenerator = randomWordGenerator;
         }

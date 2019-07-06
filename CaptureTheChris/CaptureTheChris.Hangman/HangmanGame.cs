@@ -1,15 +1,24 @@
 using System;
+using CaptureTheChris.GameLogic;
 
 namespace CaptureTheChris.Hangman
 {
-    public class HangmanGame
+    public class HangmanGame : Game, IGame
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
         
         private IPhaseToGuess phaseToGuess;
-        public bool IsWon => phaseToGuess.AreAllLettersGuessed();
-        public bool IsRunning { get; private set; }
+        public override bool IsWon
+        {
+            get => phaseToGuess.AreAllLettersGuessed();
+            
+            protected set
+            {
+            }
+        }
+
+        public override bool IsRunning { get; protected set; }
 
         public int Tries
         {
@@ -32,7 +41,7 @@ namespace CaptureTheChris.Hangman
             this.randomWordGenerator = randomWordGenerator;
         }
 
-        public void StartGame()
+        public override void StartGame()
         {
             string generatedWord = randomWordGenerator.GetRandomWord();
             
@@ -76,10 +85,5 @@ namespace CaptureTheChris.Hangman
                 Tries -= 1;
         }
         
-        private void CheckRunningGame()
-        {
-            if (!IsRunning)
-                throw new InvalidOperationException("Cannot play when game is not running.");
-        }
     }
 }

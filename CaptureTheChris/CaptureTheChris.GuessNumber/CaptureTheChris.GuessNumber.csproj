@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95EB598F-EE1E-463B-BC28-AD480EAF8E53}</ProjectGuid>
+    <ProjectGuid>{07D83EAA-8246-47B2-AF02-C92400BE9C65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaptureTheChris.Hangman</RootNamespace>
-    <AssemblyName>CaptureTheChris.Hangman</AssemblyName>
+    <RootNamespace>CaptureTheChris.GuessNumber</RootNamespace>
+    <AssemblyName>CaptureTheChris.GuessNumber</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,46 +34,21 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HangmanGame.cs" />
-    <Compile Include="IPhaseToGuess.cs" />
-    <Compile Include="IRandomWordGenerator.cs" />
-    <Compile Include="LetterToGuess.cs" />
-    <Compile Include="PhaseToGuess.cs" />
-    <Compile Include="RandomWordGenerator.cs" />
-    <Compile Include="WordListLoader.cs" />
-    <Compile Include="IWordListLoader.cs" />
+    <Compile Include="GuessNumberGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\google-10000-english-usa-no-swears-long.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
       <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
       <Name>CaptureTheChris.GameLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
-      <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
-      <Name>CaptureTheChris.Interfaces</Name>
+    <ProjectReference Include="..\CaptureTheChris.Hangman\CaptureTheChris.Hangman.csproj">
+      <Project>{95eb598f-ee1e-463b-bc28-ad480eaf8e53}</Project>
+      <Name>CaptureTheChris.Hangman</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Randomness\CaptureTheChris.Randomness.csproj">
       <Project>{dea19e8d-b035-4faf-a6ee-757e808ee225}</Project>
@@ -80,4 +56,11 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
 </Project>

@@ -7,20 +7,10 @@ namespace CaptureTheChris.Hangman
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
-        private bool isWon;
-        
+
         private IPhaseToGuess phaseToGuess;
 
-        public override bool IsWon
-        {
-            get => isWon;
-
-            protected set
-            {
-                isWon = value;
-                Data.Properties.Settings.Default.IsHangmanWon = true;
-            }
-        }
+        public override bool IsWon { get; protected set; }
 
         public override bool IsRunning { get; protected set; }
 

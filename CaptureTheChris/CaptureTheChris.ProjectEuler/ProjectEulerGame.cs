@@ -6,7 +6,7 @@ namespace CaptureTheChris.ProjectEuler
 {
     public class ProjectEulerGame : Game, IGame
     {
-        public ProjectEulerGame(string flag) : base(flag)
+        public ProjectEulerGame() : base(Flags.Properties.Resources.FlagProjectEuler)
         {
         }
 

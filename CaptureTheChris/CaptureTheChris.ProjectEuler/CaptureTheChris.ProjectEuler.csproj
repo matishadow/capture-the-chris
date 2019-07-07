@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ProjectEulerGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\integral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
+      <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
+      <Name>CaptureTheChris.GameLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,7 @@ using CaptureTheChris.Enums;
 using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
 using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 using CaptureTheChris.Interfaces.SimonSays;
+using CaptureTheChris.Randomness;
 
 namespace CaptureTheChris.SimonSays
 {
@@ -10,16 +11,16 @@ namespace CaptureTheChris.SimonSays
         IAsImplementedInterfacesDependency, IInstancePerRequestDependency
     {
         private readonly int numberOfPossibleColors = Enum.GetNames(typeof(SimonSaysColor)).Length;
-        private readonly ISimonSaysRandomGenerator randomGenerator;
+        private readonly IRandomNumberGenerator randomGenerator;
 
-        public SimonSaysColorGenerator(ISimonSaysRandomGenerator randomGenerator)
+        public SimonSaysColorGenerator(IRandomNumberGenerator randomGenerator)
         {
             this.randomGenerator = randomGenerator;
         }
 
         public SimonSaysColor GetRandomColor()
         {
-            int randomNumber = randomGenerator.GetRandomNumber(numberOfPossibleColors);
+            int randomNumber = randomGenerator.GetRandomInteger(numberOfPossibleColors);
             return (SimonSaysColor) randomNumber;
         }
     }

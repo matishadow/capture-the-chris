@@ -7,7 +7,7 @@ using CaptureTheChris.Interfaces.SimonSays;
 
 namespace CaptureTheChris.SimonSays
 {
-    public class SimonSaysGame : ISimonSaysGame
+    public class SimonSaysGame 
     {
         private readonly ISimonSaysColorGenerator simonSaysColorGenerator;
 

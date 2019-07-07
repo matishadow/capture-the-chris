@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureTheChris.Enums", "Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptureTheChris.Interfaces", "CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj", "{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.SimonSays", "CaptureTheChris.SimonSays\CaptureTheChris.SimonSays.csproj", "{A4F3A535-3422-40DD-866A-6AA18F4E5078}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Hangman", "CaptureTheChris.Hangman\CaptureTheChris.Hangman.csproj", "{95EB598F-EE1E-463B-BC28-AD480EAF8E53}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Randomness", "CaptureTheChris.Randomness\CaptureTheChris.Randomness.csproj", "{DEA19E8D-B035-4FAF-A6EE-757E808EE225}"
@@ -49,6 +51,18 @@ Global
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E27F4B3-1DB5-4833-AF15-CA05C119FBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56781CE-02C5-4AEC-AFA4-3C4901698E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561C64CE-A705-486F-863B-C577FAF48AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561C64CE-A705-486F-863B-C577FAF48AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561C64CE-A705-486F-863B-C577FAF48AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561C64CE-A705-486F-863B-C577FAF48AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F3A535-3422-40DD-866A-6AA18F4E5078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F3A535-3422-40DD-866A-6AA18F4E5078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F3A535-3422-40DD-866A-6AA18F4E5078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F3A535-3422-40DD-866A-6AA18F4E5078}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95EB598F-EE1E-463B-BC28-AD480EAF8E53}.Release|Any CPU.ActiveCfg = Release|Any CPU

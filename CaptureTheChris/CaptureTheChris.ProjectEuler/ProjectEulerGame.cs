@@ -22,7 +22,7 @@ namespace CaptureTheChris.ProjectEuler
         {
             CheckRunningGame();
             
-            answer = answer.Replace(',', '.').Substring(0, 7);
+            answer = answer.Replace(',', '.').ToLower().Substring(0, 7);
             
             if (answer != "pi/12" && answer != "π/12" && answer != "0.26180" && answer != "0.26179") return;
             

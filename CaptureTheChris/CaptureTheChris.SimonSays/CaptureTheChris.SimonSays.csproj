@@ -47,6 +47,14 @@
       <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
       <Name>CaptureTheChris.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
+      <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
+      <Name>CaptureTheChris.Flags</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
+      <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
+      <Name>CaptureTheChris.GameLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
       <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
       <Name>CaptureTheChris.Interfaces</Name>

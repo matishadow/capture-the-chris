@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEA19E8D-B035-4FAF-A6EE-757E808EE225}</ProjectGuid>
+    <ProjectGuid>{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaptureTheChris.Randomness</RootNamespace>
-    <AssemblyName>CaptureTheChris.Randomness</AssemblyName>
+    <RootNamespace>CaptureTheChris.Enigma</RootNamespace>
+    <AssemblyName>CaptureTheChris.Enigma</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,10 +38,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRandomColorGenerator.cs" />
-    <Compile Include="IRandomNumberGenerator.cs" />
-    <Compile Include="RandomColorGenerator.cs" />
-    <Compile Include="RandomNumberGenerator.cs" />
+    <Compile Include="EnigmaField.cs" />
+    <Compile Include="EnigmaGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +47,17 @@
       <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
       <Name>CaptureTheChris.Enums</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
-      <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
-      <Name>CaptureTheChris.Interfaces</Name>
+    <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
+      <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
+      <Name>CaptureTheChris.Flags</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
+      <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
+      <Name>CaptureTheChris.GameLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Randomness\CaptureTheChris.Randomness.csproj">
+      <Project>{dea19e8d-b035-4faf-a6ee-757e808ee225}</Project>
+      <Name>CaptureTheChris.Randomness</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

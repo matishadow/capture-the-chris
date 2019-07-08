@@ -5,21 +5,22 @@ using System.Linq;
 using CaptureTheChris.Enums;
 using CaptureTheChris.GameLogic;
 using CaptureTheChris.Interfaces.SimonSays;
+using CaptureTheChris.Randomness;
 
 namespace CaptureTheChris.SimonSays
 {
     public class SimonSaysGame : Game, IGame
     {
-        private readonly ISimonSaysColorGenerator simonSaysColorGenerator;
+        private readonly IRandomColorGenerator randomColorGenerator;
         private const int NumberOfRounds = 30;
 
         private SimonSaysColor[] simonSaysColors;
         private int roundNumber;
 
-        public SimonSaysGame(ISimonSaysColorGenerator simonSaysColorGenerator) 
+        public SimonSaysGame(IRandomColorGenerator randomColorGenerator) 
             : base(Flags.Properties.Resources.FlagSimonSays)
         {
-            this.simonSaysColorGenerator = simonSaysColorGenerator;
+            this.randomColorGenerator = randomColorGenerator;
         }
 
         public IEnumerable<SimonSaysColor> GetColorsToRemember()
@@ -60,7 +61,7 @@ namespace CaptureTheChris.SimonSays
             
             simonSaysColors = new SimonSaysColor[NumberOfRounds];
             for (var i = 0; i < simonSaysColors.Length; i++)
-                simonSaysColors[i] = simonSaysColorGenerator.GetRandomColor();
+                simonSaysColors[i] = randomColorGenerator.GetRandomColor<SimonSaysColor>();
         }
     }
 }

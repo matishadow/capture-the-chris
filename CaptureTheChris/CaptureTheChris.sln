@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.ProjectEule
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Sudoku", "CaptureTheChris.Sudoku\CaptureTheChris.Sudoku.csproj", "{2258B85A-0877-4885-9204-2D9B3BF76B6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptureTheChris.Enigma", "CaptureTheChris.Enigma\CaptureTheChris.Enigma.csproj", "{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{2258B85A-0877-4885-9204-2D9B3BF76B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2258B85A-0877-4885-9204-2D9B3BF76B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2258B85A-0877-4885-9204-2D9B3BF76B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F43DE6-1E87-403C-86D5-D61DEEC31F23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

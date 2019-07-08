@@ -38,7 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SimonSaysColorGenerator.cs" />
     <Compile Include="SimonSaysGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

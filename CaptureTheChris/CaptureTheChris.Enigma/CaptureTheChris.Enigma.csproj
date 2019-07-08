@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnigmaField.cs" />
     <Compile Include="EnigmaGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

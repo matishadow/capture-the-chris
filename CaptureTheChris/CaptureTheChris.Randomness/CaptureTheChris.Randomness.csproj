@@ -38,11 +38,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRandomColorGenerator.cs" />
     <Compile Include="IRandomNumberGenerator.cs" />
+    <Compile Include="RandomColorGenerator.cs" />
     <Compile Include="RandomNumberGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaptureTheChris.Enums\CaptureTheChris.Enums.csproj">
+      <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
+      <Name>CaptureTheChris.Enums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
       <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
       <Name>CaptureTheChris.Interfaces</Name>

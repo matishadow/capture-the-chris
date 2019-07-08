@@ -38,10 +38,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EnigmaGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaptureTheChris.Enums\CaptureTheChris.Enums.csproj">
+      <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
+      <Name>CaptureTheChris.Enums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
       <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
       <Name>CaptureTheChris.Flags</Name>
@@ -49,6 +53,10 @@
     <ProjectReference Include="..\CaptureTheChris.GameLogic\CaptureTheChris.GameLogic.csproj">
       <Project>{4c52104b-30d1-4663-b92b-a0a2f8256fb3}</Project>
       <Name>CaptureTheChris.GameLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Randomness\CaptureTheChris.Randomness.csproj">
+      <Project>{dea19e8d-b035-4faf-a6ee-757e808ee225}</Project>
+      <Name>CaptureTheChris.Randomness</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

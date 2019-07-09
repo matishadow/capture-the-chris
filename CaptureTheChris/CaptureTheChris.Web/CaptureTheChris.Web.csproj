@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
@@ -189,6 +189,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Content\Images\integral.png" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -218,7 +219,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\ProjectEuler\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Flag.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -228,8 +231,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -257,13 +258,41 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaptureTheChris.Enigma\CaptureTheChris.Enigma.csproj">
+      <Project>{e0f43de6-1e87-403c-86d5-d61deec31f23}</Project>
+      <Name>CaptureTheChris.Enigma</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Enums\CaptureTheChris.Enums.csproj">
       <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
       <Name>CaptureTheChris.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.GuessNumber\CaptureTheChris.GuessNumber.csproj">
+      <Project>{07d83eaa-8246-47b2-af02-c92400be9c65}</Project>
+      <Name>CaptureTheChris.GuessNumber</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Hangman\CaptureTheChris.Hangman.csproj">
+      <Project>{95eb598f-ee1e-463b-bc28-ad480eaf8e53}</Project>
+      <Name>CaptureTheChris.Hangman</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
       <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
       <Name>CaptureTheChris.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.ProjectEuler\CaptureTheChris.ProjectEuler.csproj">
+      <Project>{16059ee4-424e-4338-b33e-ca1b9de4a39f}</Project>
+      <Name>CaptureTheChris.ProjectEuler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.SimonSays\CaptureTheChris.SimonSays.csproj">
+      <Project>{a4f3a535-3422-40dd-866a-6aa18f4e5078}</Project>
+      <Name>CaptureTheChris.SimonSays</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Sudoku\CaptureTheChris.Sudoku.csproj">
+      <Project>{2258b85a-0877-4885-9204-2d9b3bf76b6b}</Project>
+      <Name>CaptureTheChris.Sudoku</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Trivia\CaptureTheChris.Trivia.csproj">
+      <Project>{1999382e-93dd-49d7-b97f-0c0632a22cea}</Project>
+      <Name>CaptureTheChris.Trivia</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

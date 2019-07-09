@@ -1,0 +1,11 @@
+@model CaptureTheChris.GameLogic.IGame
+
+
+<div class="row align-items-end mt-lg-5 text-center">
+    <div class="col">
+        @if (Model.IsWon)
+        {
+            @:<h3><b>Flag: @Model.GetFlag()</b></h3>
+        }
+    </div>
+</div>

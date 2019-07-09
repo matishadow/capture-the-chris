@@ -1,7 +1,39 @@
-@model dynamic
+﻿@model CaptureTheChris.ProjectEuler.IProjectEulerGame
 
-@{
-    ViewBag.Title = "title";
-}
+<div class="container pp-container">
+    <div class="row">
+        <div class="col-md-auto">
+            <img class="img-fluid" src="@Url.Content("~/content/Images/integral.png")" alt="Image"/>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            Sprawdźmy czy jeszcze pamiętasz całki.
+        </div>
+    </div>
 
-<h2>title</h2>
+
+    <div class="row text-center">
+        @using (Ajax.BeginForm("Answer", "ProjectEuler", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "patientList",
+            LoadingElementId = "loader"
+        }, new {@class = "row"}))
+        {
+            <div class="form-row">
+            <div class="col">
+                <label for="answer">Wynik to:</label>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="answer" name="answer">
+            </div>
+                <div class="col">
+                    <input class="button" type="submit" value="Wyślij"/>
+                </div>
+                </div>
+        }
+    </div>
+
+    @Html.Partial("_Flag")
+</div>

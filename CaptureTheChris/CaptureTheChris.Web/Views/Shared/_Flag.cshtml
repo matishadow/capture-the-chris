@@ -1,11 +1,21 @@
 @model CaptureTheChris.GameLogic.IGame
 
 
-<div class="row align-items-end mt-lg-5 text-center">
+<div class="row align-items-end mt-lg-4 text-center">
     <div class="col">
         @if (Model.IsWon)
         {
-            @:<h3><b>Flaga: @Model.GetFlag()</b></h3>
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4><b>Flaga: @Model.GetFlag()</b></h4>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Niestety nie.</strong> 
+            </div>
         }
     </div>
 </div>

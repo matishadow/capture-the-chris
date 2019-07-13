@@ -8,6 +8,7 @@ namespace CaptureTheChris.Sudoku
         bool IsRunning { get; }
         void StartGame();
         bool TryProvideAnswer(IEnumerable<int> proposedAnswer);
+        int?[][] VisibleNumbers { get; }
         string GetFlag();
     }
 }

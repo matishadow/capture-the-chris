@@ -18,18 +18,21 @@
         <div class="form-group">
             @foreach (var row in Model.VisibleNumbers)
             {
-                foreach (var field in row)
-                {
-                    <input type="text" 
-                           maxlength="1" 
-                           oninput="this.value=this.value.replace(/[^0-9]/g,'');" 
-                           class="form-control sudoku-text-box text-center" 
-                           id="answer" 
-                           name="answer" 
-                           @(field != null ? "readonly" : string.Empty)
-                           value="@(field)">
-                } 
-                <br/>
+                <div class="row">
+                    @foreach (var field in row)
+                    {
+                        <div class="col no-padding">
+                            <input type="text"
+                                   maxlength="1"
+                                   oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                                   class="form-control sudoku-text-box text-center"
+                                   id="answer"
+                                   name="answer"
+                                   @(field != null ? "readonly" : string.Empty)
+                                   value="@(field)">
+                        </div>
+                    }
+                </div>
             }
         </div>
 

@@ -14,7 +14,12 @@
 }
 
 .sudoku-text-box {
-    width: 55px;
-    height: 45px;
+    max-width: 55px;
+    max-height: 45px;
     display: inline-block;
+}
+
+.no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
 }

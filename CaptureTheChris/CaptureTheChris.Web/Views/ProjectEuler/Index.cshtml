@@ -1,5 +1,4 @@
-﻿@using CaptureTheChris.Web.Models
-@model CaptureTheChris.ProjectEuler.IProjectEulerGame
+﻿@model CaptureTheChris.ProjectEuler.IProjectEulerGame
 
 <div class="container pp-container">
     <div class="row">
@@ -19,7 +18,7 @@
     @using (Ajax.BeginForm("Answer", "ProjectEuler", new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "flag"
+        UpdateTargetId = "flag-placeholder"
     }, new {@class = "form"}))
     {
         <div class="form-group">
@@ -31,5 +30,5 @@
         </div>
     }
 
-    @Html.Partial("_Flag", new GameResult())
+    <div id="flag-placeholder"></div>
 </div>

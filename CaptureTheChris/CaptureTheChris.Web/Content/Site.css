@@ -12,3 +12,9 @@
 
     padding: 2rem 1rem;
 }
+
+.sudoku-text-box {
+    width: 55px;
+    height: 45px;
+    display: inline-block;
+}

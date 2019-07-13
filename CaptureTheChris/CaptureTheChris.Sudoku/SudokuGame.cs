@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CaptureTheChris.Flags.Properties;
 using CaptureTheChris.GameLogic;
 using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
 using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
@@ -7,7 +8,7 @@ using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 namespace CaptureTheChris.Sudoku
 {
     public class SudokuGame : Game, IGame, ISudokuGame,
-        ISingleInstanceDependency, IAsImplementedInterfacesDependency 
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency
     {
         private readonly IEnumerable<int> answer = new[]
         {
@@ -22,7 +23,20 @@ namespace CaptureTheChris.Sudoku
             2, 1, 9, 4, 5, 7, 6, 8, 3
         };
 
-        public SudokuGame() : base(Flags.Properties.Resources.FlagSudoku)
+        public readonly int?[][] VisibleNumbers =
+        {
+            new int?[]{null, null, null, 7, null, 4, null, null, 5},
+            new int?[]{null, 2, null, null, 1, null, null, 7, null},
+            new int?[]{null, null, null, null, 8, null, null, null, 2},
+            new int?[]{null, 9, null, null, null, 6, 2, 5, null},
+            new int?[]{6, null, null, null, 7, null, null, null, 8},
+            new int?[]{null, 5, 3, 2, null, null, null, 1, null},
+            new int?[]{4, null, null, null, 9, null, null, null, null},
+            new int?[]{null, 3, null, null, 6, null, null, 9, null},
+            new int?[]{2, null, null, 4, null, 7, null, null, null}
+        };
+
+        public SudokuGame() : base(Resources.FlagSudoku)
         {
         }
 

@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CaptureTheChris.GameLogic;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 
 namespace CaptureTheChris.Sudoku
 {
-    public class SudokuGame : Game, IGame
+    public class SudokuGame : Game, IGame, ISudokuGame,
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency 
     {
         private readonly IEnumerable<int> answer = new[]
         {
@@ -32,14 +35,16 @@ namespace CaptureTheChris.Sudoku
             IsRunning = true;
         }
 
-        public void ProvideAnswer(IEnumerable<int> proposedAnswer)
+        public bool TryProvideAnswer(IEnumerable<int> proposedAnswer)
         {
             CheckRunningGame();
 
-            if (!proposedAnswer.SequenceEqual(answer)) return;
+            if (!proposedAnswer.SequenceEqual(answer)) return false;
 
             IsRunning = false;
             IsWon = true;
+
+            return true;
         }
     }
 }

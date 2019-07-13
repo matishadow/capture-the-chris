@@ -20,16 +20,18 @@ namespace CaptureTheChris.ProjectEuler
             IsRunning = true;
         }
 
-        public void ProvideAnswer(string answer)
+        public bool TryProvideAnswer(string answer)
         {
             CheckRunningGame();
 
             answer = answer.Replace(',', '.').ToLower().Substring(0, Math.Min(7, answer.Length));
             
-            if (answer != "pi/12" && answer != "π/12" && answer != "0.26180" && answer != "0.26179") return;
+            if (answer != "pi/12" && answer != "π/12" && answer != "0.26180" && answer != "0.26179") return false;
             
             IsRunning = false;
             IsWon = true;
+
+            return true;
         }
     }
 }

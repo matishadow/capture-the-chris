@@ -5,7 +5,7 @@ namespace CaptureTheChris.ProjectEuler
         bool IsWon { get; }
         bool IsRunning { get; }
         void StartGame();
-        void ProvideAnswer(string answer);
+        bool TryProvideAnswer(string answer);
         string GetFlag();
     }
 }

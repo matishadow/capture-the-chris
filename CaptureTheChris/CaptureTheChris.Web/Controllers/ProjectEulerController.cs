@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using CaptureTheChris.ProjectEuler;
+using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
@@ -18,13 +19,14 @@ namespace CaptureTheChris.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Answer(string answer)
+        public PartialViewResult Answer(string answer)
         {
             projectEulerGame.StartGame();
             
-            projectEulerGame.ProvideAnswer(answer);
+            bool wasLastTrySuccessful = projectEulerGame.TryProvideAnswer(answer);
+            var gameResult = new GameResult(projectEulerGame.IsWon, projectEulerGame.GetFlag(), wasLastTrySuccessful);
 
-            return View("Index", projectEulerGame);
+            return PartialView("_Flag", gameResult);
         }
     }
 }

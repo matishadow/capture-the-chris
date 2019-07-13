@@ -1,16 +1,16 @@
-@model CaptureTheChris.GameLogic.IGame
+@model CaptureTheChris.Web.Models.GameResult
 
 
-<div class="row align-items-end mt-lg-4 text-center">
+<div id="flag" class="row align-items-end mt-lg-4 text-center">
     <div class="col">
         @if (Model.IsWon)
         {
             <div class="alert alert-dismissible alert-success">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <h4><b>Flaga: @Model.GetFlag()</b></h4>
+                <h4><b>Flaga: @Model.Flag</b></h4>
             </div>
         }
-        else
+        else if (Model.WasLastTrySuccessful != null && (bool)!Model.WasLastTrySuccessful)
         {
             <div class="alert alert-dismissible alert-danger">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>

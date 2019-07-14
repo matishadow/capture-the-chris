@@ -5,7 +5,7 @@ using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 namespace CaptureTheChris.Randomness
 {
     public class RandomNumberGenerator : IRandomNumberGenerator,
-        IInstancePerRequestDependency, IAsImplementedInterfacesDependency 
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency
     {
         private readonly Random random;
 

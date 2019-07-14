@@ -1,0 +1,29 @@
+﻿@model CaptureTheChris.GuessNumber.IGuessNumberGame
+
+<div class="container pp-container">
+    <div class="row text-center mt-lg-5">
+        <div class="col">
+            <h3>
+                <b>Spróbuj szczęścia zgadując liczbę od 0 do 100.</b>
+            </h3>
+        </div>
+    </div>
+
+
+    @using (Ajax.BeginForm("Answer", "GuessNumber", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "flag-placeholder"
+    }, new {@class = "form"}))
+    {
+        <div class="form-group">
+            <label for="answer">Strzelam, że wypadło:</label>
+            <input type="text" class="form-control" id="answer" name="answer">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="Wyślij"/>
+        </div>
+    }
+
+    <div id="flag-placeholder"></div>
+</div>

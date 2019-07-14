@@ -1,14 +1,15 @@
 ﻿using CaptureTheChris.GameLogic;
-using CaptureTheChris.Hangman;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 using CaptureTheChris.Randomness;
 
 namespace CaptureTheChris.GuessNumber
 {
-    public class GuessNumberGame : Game, IGame
+    public class GuessNumberGame : Game, IGame, IGuessNumberGame,
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency
     {
         private int? numberToGuess;
         private readonly IRandomNumberGenerator randomNumberGenerator;
-        private bool isWon;
 
         public GuessNumberGame(IRandomNumberGenerator randomNumberGenerator)
             : base(Flags.Properties.Resources.FlagGuessNumber)
@@ -16,15 +17,7 @@ namespace CaptureTheChris.GuessNumber
             this.randomNumberGenerator = randomNumberGenerator;
         }
 
-        public override bool IsWon
-        {
-            get => isWon;
-            protected set
-            {
-                isWon = value;
-                Flags.Properties.Settings.Default.IsGuessNumberWon = true;
-            }
-        }
+        public override bool IsWon { get; protected set; }
 
         public override bool IsRunning { get; protected set; }
 
@@ -33,20 +26,23 @@ namespace CaptureTheChris.GuessNumber
             numberToGuess = randomNumberGenerator.GetRandomInteger(100);
 
             IsRunning = true;
+            IsWon = false;
         }
 
         public override string GetFlag()
         {
-            return IsWon ? CaptureTheChris.Flags.Properties.Resources.FlagGuessNumber : string.Empty;
+            return IsWon ? Flag : string.Empty;
         }
 
-        public void Guess(int number)
+        public bool TryGuess(int number)
         {
-            if (number != numberToGuess) return;
+            if (number != numberToGuess) return false;
 
             IsWon = true;
             numberToGuess = null;
             IsRunning = false;
+
+            return true;
         }
     }
 }

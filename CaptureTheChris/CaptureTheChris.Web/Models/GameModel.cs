@@ -1,15 +1,15 @@
 namespace CaptureTheChris.Web.Models
 {
-    public class GameResult
+    public class GameModel
     {
-        public GameResult(bool isWon, string flag, bool wasLastTrySuccessful)
+        public GameModel(bool isWon, string flag, bool wasLastTrySuccessful)
         {
             IsWon = isWon;
             Flag = flag;
             WasLastTrySuccessful = wasLastTrySuccessful;
         }
 
-        public GameResult()
+        public GameModel()
         {
         }
 

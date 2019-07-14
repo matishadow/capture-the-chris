@@ -25,7 +25,7 @@ namespace CaptureTheChris.Web.Controllers
             sudokuGame.StartGame();
             
             bool wasLastTrySuccessful = sudokuGame.TryProvideAnswer(answer);
-            var gameResult = new GameResult(sudokuGame.IsWon, sudokuGame.GetFlag(), wasLastTrySuccessful);
+            var gameResult = new GameModel(sudokuGame.IsWon, sudokuGame.GetFlag(), wasLastTrySuccessful);
 
             return PartialView("_Flag", gameResult);
         }

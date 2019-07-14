@@ -1,0 +1,32 @@
+﻿@model CaptureTheChris.Trivia.ITriviaGame
+
+<div class="container pp-container">
+    <div class="row text-center mt-lg-5">
+        <div class="col">
+            <h3>
+                <b>Na pewno znasz odpowiedź na te proste pytania!</b>
+            </h3>
+        </div>
+    </div>
+
+
+    @using (Ajax.BeginForm("Answer", "Trivia", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "flag-placeholder"
+    }, new {@class = "form"}))
+    {
+        foreach (string question in Model.Questions)
+        {
+            <div class="form-group">
+                <label for="answers">@question</label>
+                <input type="text" class="form-control" id="answers" name="answers">
+            </div>
+        }
+        <div class="form-group">
+            <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="Wyślij"/>
+        </div>
+    }
+
+    <div id="flag-placeholder"></div>
+</div>

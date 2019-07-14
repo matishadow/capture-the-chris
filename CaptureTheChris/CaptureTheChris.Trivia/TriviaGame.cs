@@ -18,16 +18,18 @@ namespace CaptureTheChris.Trivia
             IsWon = false;
         }
 
-        public void Answer(TriviaAnswers triviaAnswers)
+        public bool TryAnswer(TriviaAnswers triviaAnswers)
         {
             if (triviaAnswers.Answer1 != Resources.Answer1 || triviaAnswers.Answer2 != Resources.Answer2 ||
                 triviaAnswers.Answer3 != Resources.Answer3 || triviaAnswers.Answer4 != Resources.Answer4 ||
                 triviaAnswers.Answer5 != Resources.Answer5 || triviaAnswers.Answer6 != Resources.Answer6 ||
                 triviaAnswers.Answer7 != Resources.Answer7 || triviaAnswers.Answer8 != Resources.Answer8 ||
-                triviaAnswers.Answer9 != Resources.Answer9 || triviaAnswers.Answer10 != Resources.Answer10) return;
+                triviaAnswers.Answer9 != Resources.Answer9 || triviaAnswers.Answer10 != Resources.Answer10) return false;
             
             IsWon = true;
             IsRunning = false;
+
+            return true;
         }
     }
 }

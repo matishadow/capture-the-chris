@@ -6,10 +6,12 @@ using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 namespace CaptureTheChris.Hangman
 {
     public class HangmanGame : Game, IGame,
-        ISingleInstanceDependency, IAsImplementedInterfacesDependency
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency, IHangmanGame
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
+        
+        public const int StartingNumberOfTries = 7;
 
         private IPhaseToGuess phaseToGuess;
 
@@ -41,18 +43,20 @@ namespace CaptureTheChris.Hangman
         public override void StartGame()
         {
             string generatedWord = randomWordGenerator.GetRandomWord();
+            generatedWord = generatedWord.ToUpper();
             
             phaseToGuess = new PhaseToGuess(generatedWord);
-            Tries = 7;
+            Tries = StartingNumberOfTries;
             IsRunning = true;
+            IsWon = false;
         }
 
-        public bool Guess(char guess) 
+        public bool TryGuess(char guess) 
         {
             return GuessInternal(guess);
         }
         
-        public bool Guess(string guess) 
+        public bool TryGuess(string guess) 
         {
             return GuessInternal(guess);
         }

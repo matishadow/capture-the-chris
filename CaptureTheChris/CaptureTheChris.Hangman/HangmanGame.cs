@@ -1,9 +1,12 @@
 using System;
 using CaptureTheChris.GameLogic;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 
 namespace CaptureTheChris.Hangman
 {
-    public class HangmanGame : Game, IGame
+    public class HangmanGame : Game, IGame,
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
@@ -44,26 +47,14 @@ namespace CaptureTheChris.Hangman
             IsRunning = true;
         }
 
-        public void Guess(char guess) 
+        public bool Guess(char guess) 
         {
-            GuessInternal(guess);
+            return GuessInternal(guess);
         }
         
-        public void Guess(string guess) 
+        public bool Guess(string guess) 
         {
-            GuessInternal(guess);
-        }
-
-        public void GuessPhase(string phase)
-        {
-            CheckRunningGame();
-            
-            bool wasGuessSuccessful = phaseToGuess.TryGuessing(phase);
-            
-            if (!wasGuessSuccessful)
-                Tries -= 1;
-            else if (phaseToGuess.AreAllLettersGuessed())
-                IsWon = true;
+            return GuessInternal(guess);
         }
 
         public string GetVisiblePhase()
@@ -71,7 +62,7 @@ namespace CaptureTheChris.Hangman
             return phaseToGuess.GetVisiblePhase();
         }
 
-        private void GuessInternal(dynamic guess)
+        private bool GuessInternal(dynamic guess)
         {
             CheckRunningGame();
 
@@ -79,6 +70,10 @@ namespace CaptureTheChris.Hangman
 
             if (!wasGuessSuccessful)
                 Tries -= 1;
+            else if (phaseToGuess.AreAllLettersGuessed())
+                IsWon = true;
+
+            return wasGuessSuccessful;
         }
         
     }

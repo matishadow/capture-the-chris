@@ -24,7 +24,7 @@ namespace CaptureTheChris.Web.Controllers
             projectEulerGame.StartGame();
             
             bool wasLastTrySuccessful = projectEulerGame.TryProvideAnswer(answer);
-            var gameResult = new GameResult(projectEulerGame.IsWon, projectEulerGame.GetFlag(), wasLastTrySuccessful);
+            var gameResult = new GameModel(projectEulerGame.IsWon, projectEulerGame.GetFlag(), wasLastTrySuccessful);
 
             return PartialView("_Flag", gameResult);
         }

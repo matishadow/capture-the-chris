@@ -1,12 +1,17 @@
 using System;
 using CaptureTheChris.GameLogic;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 
 namespace CaptureTheChris.Hangman
 {
-    public class HangmanGame : Game, IGame
+    public class HangmanGame : Game, IGame,
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency, IHangmanGame
     {
         private readonly IRandomWordGenerator randomWordGenerator;
         private int tries;
+        
+        public const int StartingNumberOfTries = 7;
 
         private IPhaseToGuess phaseToGuess;
 
@@ -38,32 +43,22 @@ namespace CaptureTheChris.Hangman
         public override void StartGame()
         {
             string generatedWord = randomWordGenerator.GetRandomWord();
+            generatedWord = generatedWord.ToUpper();
             
             phaseToGuess = new PhaseToGuess(generatedWord);
-            Tries = 7;
+            Tries = StartingNumberOfTries;
             IsRunning = true;
+            IsWon = false;
         }
 
-        public void Guess(char guess) 
+        public bool TryGuess(char guess) 
         {
-            GuessInternal(guess);
+            return GuessInternal(guess);
         }
         
-        public void Guess(string guess) 
+        public bool TryGuess(string guess) 
         {
-            GuessInternal(guess);
-        }
-
-        public void GuessPhase(string phase)
-        {
-            CheckRunningGame();
-            
-            bool wasGuessSuccessful = phaseToGuess.TryGuessing(phase);
-            
-            if (!wasGuessSuccessful)
-                Tries -= 1;
-            else if (phaseToGuess.AreAllLettersGuessed())
-                IsWon = true;
+            return GuessInternal(guess);
         }
 
         public string GetVisiblePhase()
@@ -71,7 +66,7 @@ namespace CaptureTheChris.Hangman
             return phaseToGuess.GetVisiblePhase();
         }
 
-        private void GuessInternal(dynamic guess)
+        private bool GuessInternal(dynamic guess)
         {
             CheckRunningGame();
 
@@ -79,6 +74,10 @@ namespace CaptureTheChris.Hangman
 
             if (!wasGuessSuccessful)
                 Tries -= 1;
+            else if (phaseToGuess.AreAllLettersGuessed())
+                IsWon = true;
+
+            return wasGuessSuccessful;
         }
         
     }

@@ -33,15 +33,21 @@ namespace CaptureTheChris.Hangman
 
         public bool TryGuessing(string guess)
         {
-            return guess == GetWholePhase();
+            bool isGuessedWhole = guess == GetWholePhase();
+
+            if (!isGuessedWhole) return false;
+            
+            foreach (char letter in guess)
+                RevealLetters(letter);
+
+            return true;
         }
 
         public string GetVisiblePhase()
         {
-            return lettersToGuess
+            return new string(lettersToGuess
                 .Select(letterToGuess => letterToGuess.IsGuessed ? letterToGuess.Letter : '_')
-                .ToList()
-                .ToString();
+                .ToArray());
         }
 
         private string GetWholePhase()

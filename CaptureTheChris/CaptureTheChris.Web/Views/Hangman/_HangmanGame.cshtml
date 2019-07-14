@@ -1,0 +1,38 @@
+﻿@model CaptureTheChris.Web.Models.HangmanModel
+
+<div class="row">
+    <div class="col-md-auto">
+        <img class="img-fluid" src="@Url.Content($"~/content/Images/Hangman/hangman{Model.Tries}.png")" alt="Image"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-auto">
+        <h3>Pozostała liczba prób: @Model.Tries</h3>
+    </div>
+</div>
+
+<div class="row">
+    @foreach (char letter in Model.VisiblePhase)
+    {
+        <div class="col h2">
+            <b>@letter</b>
+        </div>
+    }
+</div>
+
+@if (Model.IsWon)
+{
+    @Html.Partial("_Flag")
+}
+@if (Model.Tries == 0)
+{
+    <div class="row align-items-end mt-lg-4 text-center text-break">
+        <div class="col">
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                Przegrałeś. Kliknij @Html.ActionLink("tutaj", "Index") aby spróbować ponownie.
+            </div>
+        </div>
+    </div>
+}

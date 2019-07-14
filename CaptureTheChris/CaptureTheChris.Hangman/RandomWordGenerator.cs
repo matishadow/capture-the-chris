@@ -5,7 +5,7 @@ using CaptureTheChris.Randomness;
 namespace CaptureTheChris.Hangman
 {
     public class RandomWordGenerator : IRandomWordGenerator,
-        IInstancePerRequestDependency, IAsImplementedInterfacesDependency
+        ISingleInstanceDependency, IAsImplementedInterfacesDependency
     {
         private readonly IRandomNumberGenerator randomNumberGenerator;
         private readonly IWordListLoader wordListLoader;

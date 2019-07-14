@@ -26,7 +26,7 @@ namespace CaptureTheChris.Web.Controllers
         public PartialViewResult Answer(IList<string> answers)
         {
             bool wasLastTrySuccessful = triviaGame.TryAnswer(answers);
-            var gameResult = new GameResult(triviaGame.IsWon, triviaGame.GetFlag(), wasLastTrySuccessful);
+            var gameResult = new GameModel(triviaGame.IsWon, triviaGame.GetFlag(), wasLastTrySuccessful);
 
             return PartialView("_Flag", gameResult);
         }

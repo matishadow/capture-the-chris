@@ -143,6 +143,7 @@
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
     <Compile Include="Controllers\GuessNumberController.cs" />
+    <Compile Include="Controllers\HangmanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectEulerController.cs" />
     <Compile Include="Controllers\SudokuController.cs" />
@@ -150,7 +151,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GameResult.cs" />
+    <Compile Include="Models\GameModel.cs" />
+    <Compile Include="Models\HangmanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,6 +167,14 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Hangman\hangman0.png" />
+    <Content Include="Content\Images\Hangman\hangman1.png" />
+    <Content Include="Content\Images\Hangman\hangman2.png" />
+    <Content Include="Content\Images\Hangman\hangman3.png" />
+    <Content Include="Content\Images\Hangman\hangman4.png" />
+    <Content Include="Content\Images\Hangman\hangman5.png" />
+    <Content Include="Content\Images\Hangman\hangman6.png" />
+    <Content Include="Content\Images\Hangman\hangman7.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -225,6 +235,8 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\GuessNumber\Index.cshtml" />
+    <Content Include="Views\Hangman\_HangmanGame.cshtml" />
+    <Content Include="Views\Hangman\Index.cshtml" />
     <Content Include="Views\ProjectEuler\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Flag.cshtml" />

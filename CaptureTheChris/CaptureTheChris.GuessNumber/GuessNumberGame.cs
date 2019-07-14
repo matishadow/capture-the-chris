@@ -37,16 +37,18 @@ namespace CaptureTheChris.GuessNumber
 
         public override string GetFlag()
         {
-            return IsWon ? CaptureTheChris.Flags.Properties.Resources.FlagGuessNumber : string.Empty;
+            return IsWon ? Flag : string.Empty;
         }
 
-        public void Guess(int number)
+        public bool TryGuess(int number)
         {
-            if (number != numberToGuess) return;
+            if (number != numberToGuess) return false;
 
             IsWon = true;
             numberToGuess = null;
             IsRunning = false;
+
+            return true;
         }
     }
 }

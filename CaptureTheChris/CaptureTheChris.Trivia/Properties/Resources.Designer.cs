@@ -19,7 +19,7 @@ namespace CaptureTheChris.Trivia.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a1.
+        ///   Looks up a localized string similar to czerwone buty.
         /// </summary>
         internal static string Answer1 {
             get {
@@ -70,7 +70,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a10.
+        ///   Looks up a localized string similar to zielon.
         /// </summary>
         internal static string Answer10 {
             get {
@@ -79,7 +79,25 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a2.
+        ///   Looks up a localized string similar to kurczak.
+        /// </summary>
+        internal static string Answer11 {
+            get {
+                return ResourceManager.GetString("Answer11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to roksana węgiel.
+        /// </summary>
+        internal static string Answer12 {
+            get {
+                return ResourceManager.GetString("Answer12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bonding.
         /// </summary>
         internal static string Answer2 {
             get {
@@ -88,7 +106,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a3.
+        ///   Looks up a localized string similar to 11/09/2017.
         /// </summary>
         internal static string Answer3 {
             get {
@@ -97,7 +115,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a4.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Answer4 {
             get {
@@ -106,7 +124,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a5.
+        ///   Looks up a localized string similar to ulewa.
         /// </summary>
         internal static string Answer5 {
             get {
@@ -115,7 +133,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a6.
+        ///   Looks up a localized string similar to eminem.
         /// </summary>
         internal static string Answer6 {
             get {
@@ -124,7 +142,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a7.
+        ///   Looks up a localized string similar to gówno.
         /// </summary>
         internal static string Answer7 {
             get {
@@ -133,7 +151,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a8.
+        ///   Looks up a localized string similar to monster.
         /// </summary>
         internal static string Answer8 {
             get {
@@ -142,7 +160,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a9.
+        ///   Looks up a localized string similar to combinesinglerows.
         /// </summary>
         internal static string Answer9 {
             get {
@@ -151,7 +169,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q1.
+        ///   Looks up a localized string similar to Co najlepiej uziemia?.
         /// </summary>
         internal static string Question1 {
             get {
@@ -160,7 +178,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q10.
+        ///   Looks up a localized string similar to Jakiego koloru był balon w filmiku urodzinowym?.
         /// </summary>
         internal static string Question10 {
             get {
@@ -169,7 +187,25 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q2.
+        ///   Looks up a localized string similar to Na co Mati miał ochotę zjeść całe?.
+        /// </summary>
+        internal static string Question11 {
+            get {
+                return ResourceManager.GetString("Question11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Która czternastolatka skradła Ci serce?.
+        /// </summary>
+        internal static string Question12 {
+            get {
+                return ResourceManager.GetString("Question12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Co Ola robiła z koleżanką w toalecie?.
         /// </summary>
         internal static string Question2 {
             get {
@@ -178,7 +214,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q3.
+        ///   Looks up a localized string similar to Data pierwszego razu w Szwecji w formacie DD/MM/RRRR..
         /// </summary>
         internal static string Question3 {
             get {
@@ -187,7 +223,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q4.
+        ///   Looks up a localized string similar to Dokąd nocą tupta jeż?.
         /// </summary>
         internal static string Question4 {
             get {
@@ -196,7 +232,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q5.
+        ///   Looks up a localized string similar to &quot;…​ jest mą siostrą, strumień bratem, A każde z żywych stworzeń to mój druh,&quot;.
         /// </summary>
         internal static string Question5 {
             get {
@@ -205,7 +241,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q6.
+        ///   Looks up a localized string similar to Kim jest Magda w kaputrze?.
         /// </summary>
         internal static string Question6 {
             get {
@@ -214,7 +250,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q7.
+        ///   Looks up a localized string similar to Co jedzą karasie?.
         /// </summary>
         internal static string Question7 {
             get {
@@ -223,7 +259,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q8.
+        ///   Looks up a localized string similar to Czego nie należy łączyć z wódką?.
         /// </summary>
         internal static string Question8 {
             get {
@@ -232,7 +268,7 @@ namespace CaptureTheChris.Trivia.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to q9.
+        ///   Looks up a localized string similar to Jakiej funkcji należy użyć jak coś nie działa w Bundlach?.
         /// </summary>
         internal static string Question9 {
             get {

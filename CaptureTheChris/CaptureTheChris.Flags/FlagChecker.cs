@@ -18,10 +18,14 @@ namespace CaptureTheChris.Flags
             Settings.Default.IsGuessNumberWon = flag == Resources.FlagGuessNumber;
             Settings.Default.IsProjectEulerWon = flag == Resources.FlagProjectEuler;
             Settings.Default.IsSimonSaysWon = flag == Resources.FlagSimonSays;
-            Settings.Default.IsKeyOnPendriveWon = flag == Resources.FlagKeyOnPendrive;
-            Settings.Default.IsOneFromMagdaWon = flag == Resources.FlagOneFromMagda;
-            Settings.Default.IsOneFromPaperWon = flag == Resources.FlagOneFromPaper;
-            
+            Settings.Default.IsFoosballWon = flag == Resources.FlagFoosball;
+            Settings.Default.IsGerritWon = flag == Resources.FlagGerrit;
+            Settings.Default.IsOrigamiWon = flag == Resources.FlagOrigami;
+            Settings.Default.IsCaveWon = flag == Resources.FlagCave;
+            Settings.Default.IsCarWon = flag == Resources.FlagCar;
+            Settings.Default.IsMetroWon = flag == Resources.FlagMetro;
+            Settings.Default.IsCakeWon = flag == Resources.FlagCake;
+
             Settings.Default.Save();
             return true;
         }

@@ -142,7 +142,10 @@
     <Compile Include="App_Start\FilterConfiguration.cs" />
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
-    <Compile Include="Attributes\TimeFilter.cs" />
+    <Compile Include="Filters\CakeTaskFilter.cs" />
+    <Compile Include="Filters\CarTaskFilter.cs" />
+    <Compile Include="Filters\MetroTaskFilter.cs" />
+    <Compile Include="Filters\TimeFilter.cs" />
     <Compile Include="Controllers\GuessNumberController.cs" />
     <Compile Include="Controllers\HangmanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -288,6 +291,10 @@
     <ProjectReference Include="..\CaptureTheChris.Enums\CaptureTheChris.Enums.csproj">
       <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
       <Name>CaptureTheChris.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
+      <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
+      <Name>CaptureTheChris.Flags</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.GuessNumber\CaptureTheChris.GuessNumber.csproj">
       <Project>{07d83eaa-8246-47b2-af02-c92400be9c65}</Project>

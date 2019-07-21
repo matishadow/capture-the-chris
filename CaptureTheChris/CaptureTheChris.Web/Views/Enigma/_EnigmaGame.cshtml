@@ -1,0 +1,28 @@
+﻿@using CaptureTheChris.Enigma
+@model CaptureTheChris.Web.Models.EnigmaModel
+
+@foreach (EnigmaGuessResult gameResult in Model.Tries)
+    {
+        <div class="row">
+            @foreach (EnigmaField field in gameResult.tries)
+            {
+                <div class="col btn btn-outline-primary enigma-field mt-2 mb-2 crossed" style="background: @field.EnigmaColor">
+                  @if (field.IsGuessed)
+                  {
+                      <img src="@Url.Content("~/content/Images/crown.png")" width="90" height="50" alt="submit" />  
+                  }
+                </div>
+            }
+        </div>
+    }
+
+<div class="row">
+    <div class="col-md-auto">
+        <h3>Pozostała liczba prób: @Model.TriesCount</h3>
+    </div>
+</div>
+
+@if (Model.IsWon)
+{
+    @Html.Partial("_Flag")
+}

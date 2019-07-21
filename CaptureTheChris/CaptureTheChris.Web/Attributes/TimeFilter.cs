@@ -9,10 +9,13 @@ namespace CaptureTheChris.Web.Attributes
         
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+#if DEBUG
+#else
             if (!birthdayAfterWorkTimeChecker.IsPastBirthdayAfterWorkTime())
             {
                 filterContext.Result = new EmptyResult();
             }
+#endif
         }
     }
 }

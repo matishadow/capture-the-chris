@@ -1,4 +1,4 @@
-﻿.pp-container {
+.pp-container {
     max-width: 650px;
 }
 
@@ -22,4 +22,8 @@
 .no-padding {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+.enigma-field {
+   min-height: 70px; 
 }

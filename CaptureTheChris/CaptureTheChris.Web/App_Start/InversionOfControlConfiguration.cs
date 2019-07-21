@@ -74,7 +74,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsImplementedInterfaces()
-                .InstancePerDependency();
+                .InstancePerDependency()
+                .PropertiesAutowired();
         }
 
         private static void RegisterInstanceDependenciesAsSelf(ContainerBuilder builder, Assembly assembly)
@@ -86,7 +87,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsSelf()
-                .InstancePerDependency();
+                .InstancePerDependency()
+                .PropertiesAutowired();
         }
 
         private static void RegisterLifetimeScopeAsInterfaces(ContainerBuilder builder, Assembly assembly)
@@ -98,7 +100,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
+                .InstancePerLifetimeScope()
+                .PropertiesAutowired();
         }
 
         private static void RegisterLifetimeScopeAsSelf(ContainerBuilder builder, Assembly assembly)
@@ -110,7 +113,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsSelf()
-                .InstancePerLifetimeScope();
+                .InstancePerLifetimeScope()
+                .PropertiesAutowired();
         }
 
         private static void RegisterInstanceRequestAsInterfaces(ContainerBuilder builder, Assembly assembly)
@@ -122,7 +126,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsImplementedInterfaces()
-                .InstancePerRequest();
+                .InstancePerRequest()
+                .PropertiesAutowired();
         }
 
         private static void RegisterInstanceRequestAsSelf(ContainerBuilder builder, Assembly assembly)
@@ -134,7 +139,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsSelf()
-                .InstancePerRequest();
+                .InstancePerRequest()
+                .PropertiesAutowired();
         }
 
         private static void RegisterSingleInstanceAsInterfaces(ContainerBuilder builder, Assembly assembly)
@@ -146,7 +152,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsImplementedInterfaces()
-                .SingleInstance();
+                .SingleInstance()
+                .PropertiesAutowired();
         }
 
         private static void RegisterSingleInstanceAsSelf(ContainerBuilder builder, Assembly assembly)
@@ -158,7 +165,8 @@ namespace CaptureTheChris.Web
 
             builder.RegisterTypes(types)
                 .AsSelf()
-                .SingleInstance();
+                .SingleInstance()
+                .PropertiesAutowired();
         }
 
         private static Type[] FilterTypesByInterfaces(IEnumerable<Type> types, params Type[] interfaces)

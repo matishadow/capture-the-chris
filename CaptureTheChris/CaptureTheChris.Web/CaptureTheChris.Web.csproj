@@ -142,11 +142,13 @@
     <Compile Include="App_Start\FilterConfiguration.cs" />
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
+    <Compile Include="Attributes\TimeFilter.cs" />
     <Compile Include="Controllers\GuessNumberController.cs" />
     <Compile Include="Controllers\HangmanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectEulerController.cs" />
     <Compile Include="Controllers\SudokuController.cs" />
+    <Compile Include="Controllers\TimeRestrictedController.cs" />
     <Compile Include="Controllers\TriviaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -310,6 +312,10 @@
     <ProjectReference Include="..\CaptureTheChris.Sudoku\CaptureTheChris.Sudoku.csproj">
       <Project>{2258b85a-0877-4885-9204-2d9b3bf76b6b}</Project>
       <Name>CaptureTheChris.Sudoku</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Time\CaptureTheChris.Time.csproj">
+      <Project>{5abe3b64-8314-499c-9c7a-63d2d66460c3}</Project>
+      <Name>CaptureTheChris.Time</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Trivia\CaptureTheChris.Trivia.csproj">
       <Project>{1999382e-93dd-49d7-b97f-0c0632a22cea}</Project>

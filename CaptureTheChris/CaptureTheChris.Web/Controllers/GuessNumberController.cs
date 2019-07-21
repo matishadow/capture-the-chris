@@ -4,7 +4,7 @@ using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
-    public class GuessNumberController : Controller
+    public class GuessNumberController : TimeRestrictedController
     {
         private readonly IGuessNumberGame guessNumberGame;
 

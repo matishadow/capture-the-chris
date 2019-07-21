@@ -6,7 +6,7 @@ using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
-    public class TriviaController : Controller
+    public class TriviaController : TimeRestrictedController
     {
         private readonly ITriviaGame triviaGame;
 

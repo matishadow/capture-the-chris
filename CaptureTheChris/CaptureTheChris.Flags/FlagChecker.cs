@@ -22,6 +22,7 @@ namespace CaptureTheChris.Flags
             Settings.Default.IsGerritWon = flag == Resources.FlagGerrit;
             Settings.Default.IsOrigamiWon = flag == Resources.FlagOrigami;
             Settings.Default.IsCaveWon = flag == Resources.FlagCave;
+            
             Settings.Default.IsCarWon = flag == Resources.FlagCar;
             Settings.Default.IsMetroWon = flag == Resources.FlagMetro;
             Settings.Default.IsCakeWon = flag == Resources.FlagCake;

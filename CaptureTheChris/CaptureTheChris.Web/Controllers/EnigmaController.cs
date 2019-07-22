@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using CaptureTheChris.Enigma;
@@ -19,12 +20,9 @@ namespace CaptureTheChris.Web.Controllers
         public ActionResult Index()
         {
             enigmaGame.StartGame();
-            
-            var enigmaResult = new EnigmaModel
-            {
-                TriesCount = enigmaGame.CurrentNumberOfTries,
-                Tries = enigmaGame.Tries
-            };
+
+            var enigmaResult = new EnigmaModel(false, enigmaGame.GetFlag(), false, enigmaGame.CurrentNumberOfTries,
+                enigmaGame.Tries);
 
             return View(enigmaResult);
         }
@@ -32,14 +30,15 @@ namespace CaptureTheChris.Web.Controllers
         [HttpPost]
         public PartialViewResult Answer(EnigmaColor[] answer)
         {
-            enigmaGame.GuessColors(answer);
+            if (!answer.All(color => Enum.IsDefined(typeof(EnigmaColor), color)))
+                throw new ArgumentException("Answer is outside of possible values.");
             
-            var enigmaResult = new EnigmaModel
-            {
-                TriesCount = enigmaGame.CurrentNumberOfTries,
-                Tries = enigmaGame.Tries
-            };
+            enigmaGame.GuessColors(answer);
 
+            var enigmaResult = new EnigmaModel(enigmaGame.IsWon, enigmaGame.GetFlag(), false,
+                enigmaGame.CurrentNumberOfTries,
+                enigmaGame.Tries);
+            
             return PartialView("_EnigmaGame", enigmaResult);
         }
     }

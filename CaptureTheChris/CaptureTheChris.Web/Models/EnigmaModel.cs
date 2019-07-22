@@ -5,7 +5,14 @@ namespace CaptureTheChris.Web.Models
 {
     public class EnigmaModel : GameModel
     {
-        public int TriesCount { get; set; }
-        public IList<EnigmaGuessResult> Tries { get; set; }
+        public EnigmaModel(bool isWon, string flag, bool wasLastTrySuccessful, int triesCount,
+            IList<EnigmaGuessResult> tries) : base(isWon, flag, wasLastTrySuccessful)
+        {
+            TriesCount = triesCount;
+            Tries = tries;
+        }
+
+        public int TriesCount { get; }
+        public IList<EnigmaGuessResult> Tries { get; }
     }
 }

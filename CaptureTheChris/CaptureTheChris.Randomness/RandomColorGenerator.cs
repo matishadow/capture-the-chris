@@ -1,9 +1,12 @@
 using System;
 using CaptureTheChris.Enums;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 
 namespace CaptureTheChris.Randomness
 {
-    public class RandomColorGenerator : IRandomColorGenerator
+    public class RandomColorGenerator : IRandomColorGenerator,
+        IAsImplementedInterfacesDependency, ISingleInstanceDependency
     {
         private readonly IRandomNumberGenerator randomGenerator;
 

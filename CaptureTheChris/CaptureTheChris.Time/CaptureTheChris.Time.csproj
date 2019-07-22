@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEA19E8D-B035-4FAF-A6EE-757E808EE225}</ProjectGuid>
+    <ProjectGuid>{5ABE3B64-8314-499C-9C7A-63D2D66460C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaptureTheChris.Randomness</RootNamespace>
-    <AssemblyName>CaptureTheChris.Randomness</AssemblyName>
+    <RootNamespace>CaptureTheChris.Time</RootNamespace>
+    <AssemblyName>CaptureTheChris.Time</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,26 +30,31 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NodaTime, Version=2.4.6.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.2.4.6\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRandomColorGenerator.cs" />
-    <Compile Include="IRandomNumberGenerator.cs" />
-    <Compile Include="RandomColorGenerator.cs" />
-    <Compile Include="RandomNumberGenerator.cs" />
+    <Compile Include="BirthdayAfterWorkTime.cs" />
+    <Compile Include="BirthdayAfterWorkTimeChecker.cs" />
+    <Compile Include="IBirthdayAfterWorkTime.cs" />
+    <Compile Include="IBirthdayAfterWorkTimeChecker.cs" />
+    <Compile Include="IPolandTimeChecker.cs" />
+    <Compile Include="PolandTimeChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaptureTheChris.Enums\CaptureTheChris.Enums.csproj">
-      <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
-      <Name>CaptureTheChris.Enums</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CaptureTheChris.Interfaces\CaptureTheChris.Interfaces.csproj">
       <Project>{3e27f4b3-1db5-4833-af15-ca05c119fbc1}</Project>
       <Name>CaptureTheChris.Interfaces</Name>

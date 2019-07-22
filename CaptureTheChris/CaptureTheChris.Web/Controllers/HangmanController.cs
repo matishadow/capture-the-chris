@@ -5,7 +5,7 @@ using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
-    public class HangmanController : Controller
+    public class HangmanController : TimeRestrictedController
     {
         private readonly IHangmanGame hangmanGame;
 

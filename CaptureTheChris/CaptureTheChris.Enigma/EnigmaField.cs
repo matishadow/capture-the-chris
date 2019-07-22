@@ -8,15 +8,23 @@ namespace CaptureTheChris.Enigma
         {
             EnigmaColor = enigmaColor;
         }
+        
+        public EnigmaField(EnigmaColor enigmaColor, bool isGuessed)
+        {
+            EnigmaColor = enigmaColor;
+            IsGuessed = isGuessed;
+        }
 
         public EnigmaColor EnigmaColor { get; }
         
         public bool IsGuessed { get; private set; }
 
-        public void Guess(EnigmaColor enigmaColor)
+        public bool Guess(EnigmaColor enigmaColor)
         {
-            if (enigmaColor == EnigmaColor)
-                IsGuessed = true;
+            if (enigmaColor != EnigmaColor) return false;
+            
+            IsGuessed = true;
+            return true;
         }
     }
 }

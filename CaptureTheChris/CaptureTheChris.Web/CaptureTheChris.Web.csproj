@@ -142,15 +142,22 @@
     <Compile Include="App_Start\FilterConfiguration.cs" />
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
+    <Compile Include="Controllers\EnigmaController.cs" />
+    <Compile Include="Filters\CakeTaskFilter.cs" />
+    <Compile Include="Filters\CarTaskFilter.cs" />
+    <Compile Include="Filters\MetroTaskFilter.cs" />
+    <Compile Include="Filters\TimeFilter.cs" />
     <Compile Include="Controllers\GuessNumberController.cs" />
     <Compile Include="Controllers\HangmanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectEulerController.cs" />
     <Compile Include="Controllers\SudokuController.cs" />
+    <Compile Include="Controllers\TimeRestrictedController.cs" />
     <Compile Include="Controllers\TriviaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnigmaModel.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\HangmanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +174,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\crown.png" />
     <Content Include="Content\Images\Hangman\hangman0.png" />
     <Content Include="Content\Images\Hangman\hangman1.png" />
     <Content Include="Content\Images\Hangman\hangman2.png" />
@@ -234,6 +242,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Enigma\Index.cshtml" />
+    <Content Include="Views\Enigma\_EnigmaGame.cshtml" />
     <Content Include="Views\GuessNumber\Index.cshtml" />
     <Content Include="Views\Hangman\_HangmanGame.cshtml" />
     <Content Include="Views\Hangman\Index.cshtml" />
@@ -287,6 +297,10 @@
       <Project>{f3d310ab-5feb-4fad-b7ff-3a203c1a68c2}</Project>
       <Name>CaptureTheChris.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
+      <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
+      <Name>CaptureTheChris.Flags</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.GuessNumber\CaptureTheChris.GuessNumber.csproj">
       <Project>{07d83eaa-8246-47b2-af02-c92400be9c65}</Project>
       <Name>CaptureTheChris.GuessNumber</Name>
@@ -310,6 +324,10 @@
     <ProjectReference Include="..\CaptureTheChris.Sudoku\CaptureTheChris.Sudoku.csproj">
       <Project>{2258b85a-0877-4885-9204-2d9b3bf76b6b}</Project>
       <Name>CaptureTheChris.Sudoku</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureTheChris.Time\CaptureTheChris.Time.csproj">
+      <Project>{5abe3b64-8314-499c-9c7a-63d2d66460c3}</Project>
+      <Name>CaptureTheChris.Time</Name>
     </ProjectReference>
     <ProjectReference Include="..\CaptureTheChris.Trivia\CaptureTheChris.Trivia.csproj">
       <Project>{1999382e-93dd-49d7-b97f-0c0632a22cea}</Project>

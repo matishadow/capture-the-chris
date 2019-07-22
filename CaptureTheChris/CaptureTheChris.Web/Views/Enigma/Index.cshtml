@@ -1,0 +1,63 @@
+﻿@model CaptureTheChris.Web.Models.EnigmaModel
+
+<div class="container pp-container">
+
+    <div id="enigma-game">
+        @Html.Partial("_EnigmaGame")
+    </div>
+
+    @using (Ajax.BeginForm("Answer", "Enigma", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "enigma-game",
+        AllowCache = true
+    }, new {@class = "form", autocomplete = "off"}))
+    {
+        <div class="form-group">
+            <div class="row">
+                @for (int i = 0; i < 4; i++)
+                {
+                    <input type="text" class="enigma-color-14 col btn enigma-field answer" value="-1" id="answer" name="answer">
+                }
+            </div>
+            <label for="answer">Zgadnij cztery unikalne kolory.</label>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-outline-primary btn-lg btn-block" type="submit" id="send" value="Wyślij"/>
+        </div>
+    }
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".answer").on("click", changeColor);
+        $("#send").on("click", resetTiles);
+    });
+    var colorPrefix = 'enigma-color-';
+    
+    var changeColor = function() {
+        var classList = this.classList;
+        for (var i = 0; i < classList.length; i++){
+            var currentClass = classList[i];
+            if (currentClass.includes(colorPrefix)){
+                var colorValue = parseInt(currentClass.split(colorPrefix)[1]);
+                colorValue += 1;
+                colorValue %= 8;
+                this.value = colorValue;
+                
+                classList.remove(currentClass);
+                classList.add(colorPrefix + colorValue);
+            }
+        }
+    };
+    var resetTiles = function() {
+        var elements = $('.answer');
+        for (var i = 0; i < elements.length; i++){
+           var element = elements[i];
+           element.removeAttribute('class');
+           element.className = 'enigma-color-14 col btn enigma-field answer';
+        }
+    }
+</script>

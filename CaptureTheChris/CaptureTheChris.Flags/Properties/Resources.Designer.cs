@@ -19,7 +19,7 @@ namespace CaptureTheChris.Flags.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -61,7 +61,34 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{9PG8UF6Z6HKPJZDSZC8M7SZEKBB}.
+        ///   Looks up a localized string similar to CTC{sto_lat!}.
+        /// </summary>
+        public static string FlagCake {
+            get {
+                return ResourceManager.GetString("FlagCake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CTC{camaro_to_to_nie_jest}.
+        /// </summary>
+        public static string FlagCar {
+            get {
+                return ResourceManager.GetString("FlagCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CTC{baby_to_zło}.
+        /// </summary>
+        public static string FlagCave {
+            get {
+                return ResourceManager.GetString("FlagCave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CTC{amarantowy_błękit}.
         /// </summary>
         public static string FlagEnigma {
             get {
@@ -70,7 +97,25 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{LTQJWF364VPTEPPEJBSV8V926G8}.
+        ///   Looks up a localized string similar to CTC{klasyczny_Mariusz}.
+        /// </summary>
+        public static string FlagFoosball {
+            get {
+                return ResourceManager.GetString("FlagFoosball", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CTC{uwolnić_merge}.
+        /// </summary>
+        public static string FlagGerrit {
+            get {
+                return ResourceManager.GetString("FlagGerrit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CTC{siedem_to_szczęśliwa_cyfra}.
         /// </summary>
         public static string FlagGuessNumber {
             get {
@@ -79,7 +124,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{FKGMFR4EUZ28KFHGDDA7U449DUJ}.
+        ///   Looks up a localized string similar to CTC{fajny_siusiak}.
         /// </summary>
         public static string FlagHangman {
             get {
@@ -88,34 +133,25 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{FSZVKF43JVNNRY4FY4K6PQ4TANN}.
+        ///   Looks up a localized string similar to CTC{w_metrze_i_w_swetrze}.
         /// </summary>
-        public static string FlagKeyOnPendrive {
+        public static string FlagMetro {
             get {
-                return ResourceManager.GetString("FlagKeyOnPendrive", resourceCulture);
+                return ResourceManager.GetString("FlagMetro", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{2UFDMBMN52KEY2K74REE3LHSNQB}.
+        ///   Looks up a localized string similar to CTC{żebyś_kurwo_umarła}.
         /// </summary>
-        public static string FlagOneFromMagda {
+        public static string FlagOrigami {
             get {
-                return ResourceManager.GetString("FlagOneFromMagda", resourceCulture);
+                return ResourceManager.GetString("FlagOrigami", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{5TAXUZXD6NCWUGZ2ZQ9AF3YBKZV}.
-        /// </summary>
-        public static string FlagOneFromPaper {
-            get {
-                return ResourceManager.GetString("FlagOneFromPaper", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CTC{HZVFA8NHY6DA3KQ9JGJDZ9DJQ52}.
+        ///   Looks up a localized string similar to CTC{pochodne_górą}.
         /// </summary>
         public static string FlagProjectEuler {
             get {
@@ -124,7 +160,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{4F5ZPFWB8KKS2JUSNXE9DH2EEVT}.
+        ///   Looks up a localized string similar to CTC{ważniejsze_to_co_mówi_Magda}.
         /// </summary>
         public static string FlagSimonSays {
             get {
@@ -133,7 +169,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{476FNER63JABTF933FKNDRD48YJ}.
+        ///   Looks up a localized string similar to CTC{wolę_szachy}.
         /// </summary>
         public static string FlagSudoku {
             get {
@@ -142,7 +178,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{EJ9BLW4FGJ8TSY3RG8QAWJ736CU}.
+        ///   Looks up a localized string similar to CTC{to_nie_było_10_pytań}.
         /// </summary>
         public static string FlagTrivia {
             get {

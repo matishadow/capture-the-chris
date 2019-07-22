@@ -1,10 +1,12 @@
 using System.Web.Mvc;
 using CaptureTheChris.ProjectEuler;
+using CaptureTheChris.Time;
+using CaptureTheChris.Web.Attributes;
 using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
-    public class ProjectEulerController : Controller
+    public class ProjectEulerController : TimeRestrictedController
     {
         private readonly IProjectEulerGame projectEulerGame;
 

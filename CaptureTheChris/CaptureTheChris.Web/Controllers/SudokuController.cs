@@ -5,7 +5,7 @@ using CaptureTheChris.Web.Models;
 
 namespace CaptureTheChris.Web.Controllers
 {
-    public class SudokuController : Controller
+    public class SudokuController : TimeRestrictedController
     {
         private readonly ISudokuGame sudokuGame;
 

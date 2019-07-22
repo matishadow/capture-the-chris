@@ -117,34 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FlagCake" xml:space="preserve">
+    <value>CTC{sto_lat!}</value>
+  </data>
+  <data name="FlagCar" xml:space="preserve">
+    <value>CTC{camaro_to_to_nie_jest}</value>
+  </data>
+  <data name="FlagCave" xml:space="preserve">
+    <value>CTC{baby_to_zło}</value>
+  </data>
   <data name="FlagEnigma" xml:space="preserve">
-    <value>CTC{9PG8UF6Z6HKPJZDSZC8M7SZEKBB}</value>
+    <value>CTC{amarantowy_błękit}</value>
+  </data>
+  <data name="FlagFoosball" xml:space="preserve">
+    <value>CTC{klasyczny_Mariusz}</value>
+  </data>
+  <data name="FlagGerrit" xml:space="preserve">
+    <value>CTC{uwolnić_merge}</value>
   </data>
   <data name="FlagGuessNumber" xml:space="preserve">
-    <value>CTC{LTQJWF364VPTEPPEJBSV8V926G8}</value>
+    <value>CTC{siedem_to_szczęśliwa_cyfra}</value>
   </data>
   <data name="FlagHangman" xml:space="preserve">
-    <value>CTC{FKGMFR4EUZ28KFHGDDA7U449DUJ}</value>
+    <value>CTC{fajny_siusiak}</value>
   </data>
-  <data name="FlagKeyOnPendrive" xml:space="preserve">
-    <value>CTC{FSZVKF43JVNNRY4FY4K6PQ4TANN}</value>
+  <data name="FlagMetro" xml:space="preserve">
+    <value>CTC{w_metrze_i_w_swetrze}</value>
   </data>
-  <data name="FlagOneFromMagda" xml:space="preserve">
-    <value>CTC{2UFDMBMN52KEY2K74REE3LHSNQB}</value>
-  </data>
-  <data name="FlagOneFromPaper" xml:space="preserve">
-    <value>CTC{5TAXUZXD6NCWUGZ2ZQ9AF3YBKZV}</value>
+  <data name="FlagOrigami" xml:space="preserve">
+    <value>CTC{żebyś_kurwo_umarła}</value>
   </data>
   <data name="FlagProjectEuler" xml:space="preserve">
-    <value>CTC{HZVFA8NHY6DA3KQ9JGJDZ9DJQ52}</value>
+    <value>CTC{pochodne_górą}</value>
   </data>
   <data name="FlagSimonSays" xml:space="preserve">
-    <value>CTC{4F5ZPFWB8KKS2JUSNXE9DH2EEVT}</value>
+    <value>CTC{ważniejsze_to_co_mówi_Magda}</value>
   </data>
   <data name="FlagSudoku" xml:space="preserve">
-    <value>CTC{476FNER63JABTF933FKNDRD48YJ}</value>
+    <value>CTC{wolę_szachy}</value>
   </data>
   <data name="FlagTrivia" xml:space="preserve">
-    <value>CTC{EJ9BLW4FGJ8TSY3RG8QAWJ736CU}</value>
+    <value>CTC{to_nie_było_10_pytań}</value>
   </data>
 </root>

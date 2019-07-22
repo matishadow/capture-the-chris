@@ -38,8 +38,9 @@ namespace CaptureTheChris.Trivia
         public bool TryAnswer(IList<string> answers)
         {
             if (answers.Count != resourceAnswers.Count) return false;
+            answers = answers.Select(a => a.ToLower()).ToList();
 
-            if (answers.Where((answer, i) => answer != resourceAnswers[i]).Any())
+            if (answers.Where((answer, i) => !answer.Contains(resourceAnswers[i])).Any())
                 return false;
 
             IsRunning = false;

@@ -1,4 +1,4 @@
-﻿.pp-container {
+.pp-container {
     max-width: 650px;
 }
 
@@ -23,3 +23,47 @@
     padding: 0 !important;
     margin: 0 !important;
 }
+
+.enigma-field {
+   min-height: 70px; 
+}
+
+.enigma-color-0 {
+    background-color: purple;
+}
+
+.enigma-color-1 {
+    background-color: red;
+}
+
+.enigma-color-2 {
+    background-color: green;
+}
+
+.enigma-color-3 {
+    background-color: yellow;
+}
+
+.enigma-color-4 {
+    background-color: cyan;
+}
+
+.enigma-color-5 {
+    background-color: navy;
+}
+
+.enigma-color-6 {
+    background-color: pink;
+}
+
+.enigma-color-7 {
+    background-color: orange;
+}
+
+.answer{
+    color: #333;
+    border-color: #333;
+    text-indent: -9999px;
+    cursor: default;
+}
+

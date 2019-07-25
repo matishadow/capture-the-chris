@@ -151,7 +151,7 @@
     <value>monster</value>
   </data>
   <data name="Answer9" xml:space="preserve">
-    <value>combinesinglerows</value>
+    <value>combinesinglerow</value>
   </data>
   <data name="Question1" xml:space="preserve">
     <value>Co najlepiej uziemia?</value>

@@ -1,4 +1,4 @@
-namespace CaptureTheChris.Interfaces.SimonSays
+namespace CaptureTheChris.SimonSays
 {
     public interface ISimonSaysRandomGenerator
     {

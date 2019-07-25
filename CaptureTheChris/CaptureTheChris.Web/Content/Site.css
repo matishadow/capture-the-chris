@@ -40,7 +40,7 @@
     background-color: green;
 }
 
-.enigma-color-3 {
+.enigma-color-3, .color-light-yellow {
     background-color: yellow;
 }
 
@@ -59,6 +59,36 @@
 .enigma-color-7 {
     background-color: orange;
 }
+
+.color-light-blue {
+    background-color: #4040ff;
+}
+
+.color-light-red {
+    background-color: #ff4040;
+}
+
+.color-light-green {
+    background-color: lawngreen;
+}
+
+.color-dark-blue {
+    background-color: #000060;
+}
+
+.color-dark-yellow {
+    background-color: #606000;
+}
+
+.color-dark-red {
+    background-color: #600000;
+}
+
+.color-dark-green {
+    background-color: darkgreen;
+}
+
+
 
 .answer{
     color: #333;

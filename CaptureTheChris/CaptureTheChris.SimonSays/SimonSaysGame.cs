@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using CaptureTheChris.Enums;
 using CaptureTheChris.GameLogic;
-using CaptureTheChris.Interfaces.SimonSays;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 using CaptureTheChris.Randomness;
 
 namespace CaptureTheChris.SimonSays
 {
-    public class SimonSaysGame : Game, IGame
+    public class SimonSaysGame : Game, IGame, 
+        IAsImplementedInterfacesDependency, ISingleInstanceDependency, ISimonSaysGame
     {
         private readonly IRandomColorGenerator randomColorGenerator;
-        private const int NumberOfRounds = 30;
+        private const int NumberOfRounds = 10;
 
         private SimonSaysColor[] simonSaysColors;
-        private int roundNumber;
 
         public SimonSaysGame(IRandomColorGenerator randomColorGenerator) 
             : base(Flags.Properties.Resources.FlagSimonSays)
@@ -27,7 +28,7 @@ namespace CaptureTheChris.SimonSays
         {
             CheckRunningGame();
 
-            return simonSaysColors.Take(roundNumber);
+            return simonSaysColors.Take(RoundNumber);
         }
 
         public void TurnRound(IList<SimonSaysColor> colors)
@@ -38,26 +39,30 @@ namespace CaptureTheChris.SimonSays
                 throw new ArgumentNullException();
             if (!colors.Any() || colors.Count > simonSaysColors.Length)
                 throw new ArgumentOutOfRangeException();
+            if (colors.Count != RoundNumber)
+                throw new ArgumentOutOfRangeException();
 
             if (colors.Where((gameColor, i) => gameColor != simonSaysColors[i]).Any())
             {
-                IsRunning = false;
-                roundNumber = 0;
+                RoundNumber = 1;
                 return;
             }
             
-            roundNumber++;
-            if (roundNumber > NumberOfRounds)
+            RoundNumber++;
+            if (RoundNumber > NumberOfRounds)
                 IsWon = true;
         }
 
         public override bool IsWon { get; protected set; }
         public override bool IsRunning { get; protected set; }
+
+        public int RoundNumber { get; private set; }
+
         public override void StartGame()
         {
             IsRunning = true;
             IsWon = false;
-            roundNumber = 1;
+            RoundNumber = 1;
             
             simonSaysColors = new SimonSaysColor[NumberOfRounds];
             for (var i = 0; i < simonSaysColors.Length; i++)

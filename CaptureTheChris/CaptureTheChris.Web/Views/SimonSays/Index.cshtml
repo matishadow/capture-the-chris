@@ -1,0 +1,21 @@
+﻿@model CaptureTheChris.Web.Models.SimonSaysModel
+
+
+<div class="container pp-container">
+    
+    <div id="simon-says-game">
+        @Html.Partial("_SimonSaysGame")
+    </div>
+
+    @using (Ajax.BeginForm("Answer", "SimonSays", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "simon-says-game",
+        AllowCache = true
+    }, new {@class = "form", @autocomplete = "off"}))
+    {
+        <div class="form-group">
+            <label for="answer">Powtarzaj za mną.</label>
+        </div>
+    }
+</div>

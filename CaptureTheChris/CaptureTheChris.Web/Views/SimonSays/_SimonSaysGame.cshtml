@@ -10,8 +10,9 @@
     <div class="col btn enigma-field mt-2 mb-2 btn-outline-primary crossed color-dark-yellow answer" id="yellow" ></div>
 </div>
 
-<div class="row">
+<div class="row mb-5">
     <div class="col-md-auto">
+        Number rundy: @Model.RoundNumber
     </div>
 </div>
 
@@ -23,7 +24,13 @@
 <script type="text/javascript">
     var clickedColors = [];
     
-      var addColor = function() {
+    var  launch_toast = function(id) {
+        var x = document.getElementById(id);
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
+    };
+    
+    var addColor = function() {
           clickedColors.push(this.id);
           
           if (clickedColors.length === @Model.RoundNumber){
@@ -34,9 +41,10 @@
                  contentType: "application/json; charset=utf-8",
                  success: function (result) {
                    $("#simon-says-game").html(result);
+                   launch_toast('toast-ok');
                  },
-                 error: function () {
-             
+                 error: function (result) {
+                   $("#simon-says-game").html(result);
                  }
              }); 
           }
@@ -49,7 +57,7 @@
            function() {
                var colorsToShow = @Html.Raw(Newtonsoft.Json.JsonConvert
                                       .SerializeObject(Model.ColorsToRemember.Select(color => color.ToString().ToLower()).ToList(), 
-                                  Newtonsoft.Json.Formatting.Indented));
+                                          Newtonsoft.Json.Formatting.Indented));
                loopFunction(colorsToShow, colorsToShow.length, 0);
                
            }, 2000);
@@ -78,13 +86,16 @@
             field.removeClass(lightColor);
             field.addClass(darkColor);
             
-            i++;
-            if (i < colorsCount) {
-               loopFunction(colorsToShow, colorsCount, i);
-            }                       
-           }, 1200)
+             setTimeout(function() {
+               i++;
+               if (i < colorsCount) {
+                   loopFunction(colorsToShow, colorsCount, i);
+               }
+             }, 500)                      
+           }, 1000)
     };
     
     showColors();
+
     
 </script>

@@ -143,6 +143,7 @@
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
     <Compile Include="Controllers\EnigmaController.cs" />
+    <Compile Include="Controllers\SimonSaysController.cs" />
     <Compile Include="Filters\CakeTaskFilter.cs" />
     <Compile Include="Filters\CarTaskFilter.cs" />
     <Compile Include="Filters\MetroTaskFilter.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="Models\EnigmaModel.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\HangmanModel.cs" />
+    <Compile Include="Models\SimonSaysModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -251,6 +253,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Flag.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\SimonSays\Index.cshtml" />
+    <Content Include="Views\SimonSays\_SimonSaysGame.cshtml" />
     <Content Include="Views\Sudoku\Index.cshtml" />
     <Content Include="Views\Trivia\Index.cshtml" />
     <Content Include="Web.config" />

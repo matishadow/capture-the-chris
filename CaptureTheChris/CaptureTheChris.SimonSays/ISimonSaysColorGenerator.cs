@@ -1,6 +1,6 @@
 using CaptureTheChris.Enums;
 
-namespace CaptureTheChris.Interfaces.SimonSays
+namespace CaptureTheChris.SimonSays
 {
     public interface ISimonSaysColorGenerator
     {

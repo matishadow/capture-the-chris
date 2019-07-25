@@ -1,0 +1,101 @@
+﻿@model CaptureTheChris.Web.Models.SimonSaysModel
+
+<div class="row">
+    <div class="col btn enigma-field mt-2 mb-2 btn-outline-primary crossed color-dark-green answer" id="green" ></div>
+    <div class="col btn enigma-field mt-2 mb-2 btn-outline-primary crossed color-dark-blue answer" id="blue" ></div>
+</div>
+
+<div class="row">
+    <div class="col btn enigma-field mt-2 mb-2 btn-outline-primary crossed color-dark-red answer" id="red" ></div>
+    <div class="col btn enigma-field mt-2 mb-2 btn-outline-primary crossed color-dark-yellow answer" id="yellow" ></div>
+</div>
+
+<div class="row mb-5">
+    <div class="col-md-auto">
+        Number rundy: @Model.RoundNumber
+    </div>
+</div>
+
+@if (Model.IsWon)
+{
+    @Html.Partial("_Flag")
+}
+
+<script type="text/javascript">
+    var clickedColors = [];
+    
+    var  launch_toast = function(id) {
+        var x = document.getElementById(id);
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
+    };
+    
+    var addColor = function() {
+          clickedColors.push(this.id);
+          
+          if (clickedColors.length === @Model.RoundNumber){
+             $.ajax({
+                 type: "POST",
+                 url: '@Url.Action("Answer", "SimonSays")',
+                 data: JSON.stringify(clickedColors),
+                 contentType: "application/json; charset=utf-8",
+                 success: function (result) {
+                   $("#simon-says-game").html(result);
+                   launch_toast('toast-ok');
+                 },
+                 error: function (result) {
+                   $("#simon-says-game").html(result);
+                 }
+             }); 
+          }
+        };
+    
+    $(".answer").on("click", addColor);
+    
+    var showColors = function() {
+       setTimeout(
+           function() {
+               var colorsToShow = @Html.Raw(Newtonsoft.Json.JsonConvert
+                                      .SerializeObject(Model.ColorsToRemember.Select(color => color.ToString().ToLower()).ToList(), 
+                                          Newtonsoft.Json.Formatting.Indented));
+               loopFunction(colorsToShow, colorsToShow.length, 0);
+               
+           }, 2000);
+    };
+    
+    var removeLight = function (field, lightColor, darkColor){
+        field.removeClass(lightColor);
+        field.addClass(darkColor); 
+    };
+        
+    var addLight = function (field, lightColor, darkColor){
+        field.removeClass(darkColor);
+        field.addClass(lightColor);
+    };
+    
+    var loopFunction = function (colorsToShow, colorsCount, i){
+        var colorName = colorsToShow[i];
+        var field = $('#' + colorName);
+        var darkColor = 'color-dark-' + colorName;
+        var lightColor = 'color-light-' + colorName;
+                           
+        field.removeClass(darkColor);
+        field.addClass(lightColor);
+                           
+        setTimeout(function () {    
+            field.removeClass(lightColor);
+            field.addClass(darkColor);
+            
+             setTimeout(function() {
+               i++;
+               if (i < colorsCount) {
+                   loopFunction(colorsToShow, colorsCount, i);
+               }
+             }, 500)                      
+           }, 1000)
+    };
+    
+    showColors();
+
+    
+</script>

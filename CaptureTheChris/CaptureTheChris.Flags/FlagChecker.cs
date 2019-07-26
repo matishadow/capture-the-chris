@@ -15,7 +15,7 @@ namespace CaptureTheChris.Flags
             if (!IsSubmissionValid(flag))
                 return false;
             
-            using(var db = new LiteDatabase("C:\\home\\site\\wwwroot\\Flags.config"))
+            using(var db = new LiteDatabase(Resources.FlagsPath))
             {
                 var flags = db.GetCollection<Flags>(nameof(Flags));
 

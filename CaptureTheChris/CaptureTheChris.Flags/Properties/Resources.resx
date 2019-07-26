@@ -153,6 +153,9 @@
   <data name="FlagSimonSays" xml:space="preserve">
     <value>CTC{ważniejsze_to_co_mówi_Magda}</value>
   </data>
+  <data name="FlagsPath" xml:space="preserve">
+    <value>C:\\home\\site\\wwwroot\\Flags.config</value>
+  </data>
   <data name="FlagSudoku" xml:space="preserve">
     <value>CTC{wolę_szachy}</value>
   </data>

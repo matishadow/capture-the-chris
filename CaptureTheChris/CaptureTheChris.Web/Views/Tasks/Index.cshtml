@@ -16,14 +16,30 @@
 <div class="container pp-container h3">
     <div class="row">
         <div class="col">
-            @Html.ActionLink("Sudoku", "Index", "Sudoku")
+            @Html.ActionLink("Foosball", "Index", "Foosball")
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Cave", "Index", "Cave")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Gerrit", "Index", "Gerrit")
+        </div>
+    </div>
+    <div class="row">
+            <div class="col">
+                @Html.ActionLink("Origami", "Index", "Origami")
+            </div>
+        </div>
     <div class="row">
         <div class="col">
             <br/>
         </div>
     </div>
+    
     <div class="row">
         <div class="col">
             @Html.ActionLink("Sudoku", "Index", "Sudoku", null, virtualTaskAttribute )
@@ -89,28 +105,28 @@
     
     <div class="row">
         <div class="col">
-            @Html.ActionLink("Hare and Hounds pt. 1", "Index", "Car", null, !Model.IsCarTaskAvailable ? new {@class = "disabled"} : null)
+            @Html.ActionLink("Hare and Hounds 1", "Index", "Car", null, !Model.IsCarTaskAvailable ? new {@class = "disabled"} : null)
         </div>
         <div class="coll">
-            @afterWorkMessage
+            @carMessage
         </div>
     </div>
     
     <div class="row">
         <div class="col">
-            @Html.ActionLink("Hare and Hounds pt. 2", "Index", "Metro", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
+            @Html.ActionLink("Hare and Hounds 2", "Index", "Metro", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
         </div>
         <div class="coll">
-            @afterWorkMessage
+            @metroMessage
         </div>
     </div>
     
     <div class="row">
         <div class="col">
-            @Html.ActionLink("Hare and Hounds pt. 3", "Index", "Cake", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
+            @Html.ActionLink("Hare and Hounds 3", "Index", "Cake", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
         </div>
         <div class="coll">
-            @afterWorkMessage
+            @cakeMessage
         </div>
     </div>
     

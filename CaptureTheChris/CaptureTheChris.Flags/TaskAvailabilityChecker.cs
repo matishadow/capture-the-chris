@@ -1,6 +1,7 @@
 using CaptureTheChris.Flags.Properties;
 using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
 using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
+using LiteDB;
 
 namespace CaptureTheChris.Flags
 {
@@ -9,17 +10,24 @@ namespace CaptureTheChris.Flags
     {
         public bool AreOutsideTaskAvailable()
         {
-            return Settings.Default.IsEnigmaWon &&
-                   Settings.Default.IsHangmanWon &&
-                   Settings.Default.IsSudokuWon &&
-                   Settings.Default.IsTriviaWon &&
-                   Settings.Default.IsGuessNumberWon &&
-                   Settings.Default.IsProjectEulerWon &&
-                   Settings.Default.IsSimonSaysWon &&
-                   Settings.Default.IsFoosballWon &&
-                   Settings.Default.IsGerritWon &&
-                   Settings.Default.IsOrigamiWon &&
-                   Settings.Default.IsCaveWon;
+            using(var db = new LiteDatabase(Resources.FlagsPath))
+            {
+                var flags = db.GetCollection<Flags>(nameof(Flags));
+
+                Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
+
+                return savedFlags.IsEnigmaWon &&
+                       savedFlags.IsHangmanWon &&
+                       savedFlags.IsSudokuWon &&
+                       savedFlags.IsTriviaWon &&
+                       savedFlags.IsGuessNumberWon &&
+                       savedFlags.IsProjectEulerWon &&
+                       savedFlags.IsSimonSaysWon &&
+                       savedFlags.IsFoosballWon &&
+                       savedFlags.IsGerritWon &&
+                       savedFlags.IsOrigamiWon &&
+                       savedFlags.IsCaveWon;
+            }
         }
 
         public bool IsCarTaskAvailable()
@@ -29,12 +37,26 @@ namespace CaptureTheChris.Flags
 
         public bool IsMetroTaskAvailable()
         {
-            return AreOutsideTaskAvailable() && Settings.Default.IsCarWon;
+            using(var db = new LiteDatabase(Resources.FlagsPath))
+            {
+                var flags = db.GetCollection<Flags>(nameof(Flags));
+
+                Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
+
+                return AreOutsideTaskAvailable() && savedFlags.IsCarWon;
+            }
         }
         
         public bool IsCakeTaskAvailable()
         {
-            return AreOutsideTaskAvailable() && Settings.Default.IsMetroWon;
+            using(var db = new LiteDatabase(Resources.FlagsPath))
+            {
+                var flags = db.GetCollection<Flags>(nameof(Flags));
+
+                Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
+
+                return AreOutsideTaskAvailable() && savedFlags.IsMetroWon;
+            }
         }
     }
 }

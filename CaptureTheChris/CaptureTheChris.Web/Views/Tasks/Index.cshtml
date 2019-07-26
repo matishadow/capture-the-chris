@@ -1,0 +1,80 @@
+﻿@model CaptureTheChris.Web.Models.TasksModel
+
+<div class="text-center mt-2">
+    <h2>Tasks</h2>
+</div>
+
+@{
+    var virtualTaskAttribute = !Model.IsPastBirthdayAfterWorkTime ? new {@class = "disabled"} : null;
+    string afterWorkMessage = !Model.IsPastBirthdayAfterWorkTime ? "[Otwarte od godziny 15:30]" : string.Empty;
+}
+
+<div class="container pp-container h3">
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Sudoku", "Index", "Sudoku")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Sudoku", "Index", "Sudoku", null, virtualTaskAttribute )
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Hangman", "Index", "Hangman", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("10 Questions", "Index", "Trivia", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Guess Number", "Index", "GuessNumber", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Enigma", "Index", "Enigma", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Project Euler", "Index", "ProjectEuler", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Simon Says", "Index", "SimonSays", null, virtualTaskAttribute)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+
+</div>

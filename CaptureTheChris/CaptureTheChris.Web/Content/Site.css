@@ -93,7 +93,10 @@
     background-color: darkgreen;
 }
 
-
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
 
 .answer{
     color: #333;

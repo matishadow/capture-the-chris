@@ -5,8 +5,12 @@
 </div>
 
 @{
+    var beforeMessage = "[Otwarte po wykonaniu wszystkich poprzednich]";
     var virtualTaskAttribute = !Model.IsPastBirthdayAfterWorkTime ? new {@class = "disabled"} : null;
     string afterWorkMessage = !Model.IsPastBirthdayAfterWorkTime ? "[Otwarte od godziny 15:30]" : string.Empty;
+    string carMessage = !Model.IsCarTaskAvailable ? beforeMessage : string.Empty;
+    string metroMessage = !Model.IsMetroTaskAvailable ? beforeMessage : string.Empty;
+    string cakeMessage = !Model.IsCakeTaskAvailable ? beforeMessage : string.Empty;
 }
 
 <div class="container pp-container h3">
@@ -76,5 +80,38 @@
             @afterWorkMessage
         </div>
     </div>
-
+    
+    <div class="row">
+        <div class="col">
+            <br/>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Hare and Hounds pt. 1", "Index", "Car", null, !Model.IsCarTaskAvailable ? new {@class = "disabled"} : null)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Hare and Hounds pt. 2", "Index", "Metro", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            @Html.ActionLink("Hare and Hounds pt. 3", "Index", "Cake", null, !Model.IsMetroTaskAvailable ? new {@class = "disabled"} : null)
+        </div>
+        <div class="coll">
+            @afterWorkMessage
+        </div>
+    </div>
+    
 </div>

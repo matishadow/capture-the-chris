@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CaptureTheChris.Enums;
+using CaptureTheChris.Flags;
 
 namespace CaptureTheChris.Web.Controllers
 {
@@ -16,6 +17,9 @@ namespace CaptureTheChris.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            var flagChecker = new FlagChecker();
+            flagChecker.SubmitFlag("CTC{fajny_siusiak}");
+            
             return View();
         }
 

@@ -1,4 +1,5 @@
-﻿@using CaptureTheChris.Enums
+﻿@using System.Reflection
+@using CaptureTheChris.Enums
 @{
     ViewBag.Title = "Portkable Pass";
 }
@@ -7,6 +8,8 @@
         <div class="jumbotron text-center">
             <h1>Portkable Pass</h1>
         </div>
+    
+    @Server.MapPath("~/Content/treatents.json")
     
     <form>
         <div class="form-group row">

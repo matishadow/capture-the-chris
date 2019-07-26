@@ -142,7 +142,10 @@
     <Compile Include="App_Start\FilterConfiguration.cs" />
     <Compile Include="App_Start\InversionOfControlConfiguration.cs" />
     <Compile Include="App_Start\RouteConfiguration.cs" />
+    <Compile Include="Controllers\CakeController.cs" />
+    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\EnigmaController.cs" />
+    <Compile Include="Controllers\MetroController.cs" />
     <Compile Include="Controllers\SimonSaysController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Filters\CakeTaskFilter.cs" />
@@ -246,11 +249,14 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Cake\Index.cshtml" />
+    <Content Include="Views\Car\Index.cshtml" />
     <Content Include="Views\Enigma\Index.cshtml" />
     <Content Include="Views\Enigma\_EnigmaGame.cshtml" />
     <Content Include="Views\GuessNumber\Index.cshtml" />
     <Content Include="Views\Hangman\_HangmanGame.cshtml" />
     <Content Include="Views\Hangman\Index.cshtml" />
+    <Content Include="Views\Metro\Index.cshtml" />
     <Content Include="Views\ProjectEuler\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Flag.cshtml" />

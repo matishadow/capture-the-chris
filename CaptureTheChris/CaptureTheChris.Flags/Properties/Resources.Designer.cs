@@ -61,7 +61,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{sto_lat!}.
+        ///   Looks up a localized string similar to CTC{STO_LAT!}.
         /// </summary>
         public static string FlagCake {
             get {
@@ -70,7 +70,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{camaro_to_to_nie_jest}.
+        ///   Looks up a localized string similar to CTC{CAMARO_TO_TO_NIE_JEST}.
         /// </summary>
         public static string FlagCar {
             get {
@@ -79,7 +79,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{baby_to_zło}.
+        ///   Looks up a localized string similar to CTC{BABY_TO_ZŁO}.
         /// </summary>
         public static string FlagCave {
             get {
@@ -88,7 +88,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{amarantowy_błękit}.
+        ///   Looks up a localized string similar to CTC{AMARANTOWY_BŁĘKIT}.
         /// </summary>
         public static string FlagEnigma {
             get {
@@ -97,7 +97,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{klasyczny_Mariusz}.
+        ///   Looks up a localized string similar to CTC{KLASYCZNY_MARIUSZ}.
         /// </summary>
         public static string FlagFoosball {
             get {
@@ -106,7 +106,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{uwolnić_merge}.
+        ///   Looks up a localized string similar to CTC{UWOLNIĆ_MERGE}.
         /// </summary>
         public static string FlagGerrit {
             get {
@@ -115,7 +115,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{siedem_to_szczęśliwa_cyfra}.
+        ///   Looks up a localized string similar to CTC{SIEDEM_TO_SZCZĘŚLIWA_CYFRA}.
         /// </summary>
         public static string FlagGuessNumber {
             get {
@@ -124,7 +124,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{fajny_siusiak}.
+        ///   Looks up a localized string similar to CTC{FAJNY_SIUSIAK}.
         /// </summary>
         public static string FlagHangman {
             get {
@@ -133,7 +133,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{w_metrze_i_w_swetrze}.
+        ///   Looks up a localized string similar to CTC{W_METRZE_I_W_SWETRZE}.
         /// </summary>
         public static string FlagMetro {
             get {
@@ -142,7 +142,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{żebyś_kurwo_umarła}.
+        ///   Looks up a localized string similar to CTC{ŻEBYŚ_KURWO_UMARŁA}.
         /// </summary>
         public static string FlagOrigami {
             get {
@@ -151,7 +151,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{pochodne_górą}.
+        ///   Looks up a localized string similar to CTC{POCHODNE_GÓRĄ}.
         /// </summary>
         public static string FlagProjectEuler {
             get {
@@ -160,7 +160,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{ważniejsze_to_co_mówi_Magda}.
+        ///   Looks up a localized string similar to CTC{WAŻNIEJSZE_TO_CO_MÓWI_MAGDA}.
         /// </summary>
         public static string FlagSimonSays {
             get {
@@ -178,7 +178,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{wolę_szachy}.
+        ///   Looks up a localized string similar to CTC{WOLĘ_SZACHY}.
         /// </summary>
         public static string FlagSudoku {
             get {
@@ -187,7 +187,7 @@ namespace CaptureTheChris.Flags.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CTC{to_nie_było_10_pytań}.
+        ///   Looks up a localized string similar to CTC{TO_NIE_BYŁO_10_PYTAŃ}.
         /// </summary>
         public static string FlagTrivia {
             get {

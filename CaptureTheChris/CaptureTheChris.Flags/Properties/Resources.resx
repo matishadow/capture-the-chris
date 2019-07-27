@@ -118,48 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FlagCake" xml:space="preserve">
-    <value>CTC{sto_lat!}</value>
+    <value>CTC{STO_LAT!}</value>
   </data>
   <data name="FlagCar" xml:space="preserve">
-    <value>CTC{camaro_to_to_nie_jest}</value>
+    <value>CTC{CAMARO_TO_TO_NIE_JEST}</value>
   </data>
   <data name="FlagCave" xml:space="preserve">
-    <value>CTC{baby_to_zło}</value>
+    <value>CTC{BABY_TO_ZŁO}</value>
   </data>
   <data name="FlagEnigma" xml:space="preserve">
-    <value>CTC{amarantowy_błękit}</value>
+    <value>CTC{AMARANTOWY_BŁĘKIT}</value>
   </data>
   <data name="FlagFoosball" xml:space="preserve">
-    <value>CTC{klasyczny_Mariusz}</value>
+    <value>CTC{KLASYCZNY_MARIUSZ}</value>
   </data>
   <data name="FlagGerrit" xml:space="preserve">
-    <value>CTC{uwolnić_merge}</value>
+    <value>CTC{UWOLNIĆ_MERGE}</value>
   </data>
   <data name="FlagGuessNumber" xml:space="preserve">
-    <value>CTC{siedem_to_szczęśliwa_cyfra}</value>
+    <value>CTC{SIEDEM_TO_SZCZĘŚLIWA_CYFRA}</value>
   </data>
   <data name="FlagHangman" xml:space="preserve">
-    <value>CTC{fajny_siusiak}</value>
+    <value>CTC{FAJNY_SIUSIAK}</value>
   </data>
   <data name="FlagMetro" xml:space="preserve">
-    <value>CTC{w_metrze_i_w_swetrze}</value>
+    <value>CTC{W_METRZE_I_W_SWETRZE}</value>
   </data>
   <data name="FlagOrigami" xml:space="preserve">
-    <value>CTC{żebyś_kurwo_umarła}</value>
+    <value>CTC{ŻEBYŚ_KURWO_UMARŁA}</value>
   </data>
   <data name="FlagProjectEuler" xml:space="preserve">
-    <value>CTC{pochodne_górą}</value>
+    <value>CTC{POCHODNE_GÓRĄ}</value>
   </data>
   <data name="FlagSimonSays" xml:space="preserve">
-    <value>CTC{ważniejsze_to_co_mówi_Magda}</value>
+    <value>CTC{WAŻNIEJSZE_TO_CO_MÓWI_MAGDA}</value>
   </data>
   <data name="FlagsPath" xml:space="preserve">
     <value>C:\\home\\site\\wwwroot\\Flags.config</value>
   </data>
   <data name="FlagSudoku" xml:space="preserve">
-    <value>CTC{wolę_szachy}</value>
+    <value>CTC{WOLĘ_SZACHY}</value>
   </data>
   <data name="FlagTrivia" xml:space="preserve">
-    <value>CTC{to_nie_było_10_pytań}</value>
+    <value>CTC{TO_NIE_BYŁO_10_PYTAŃ}</value>
   </data>
 </root>

@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using CaptureTheChris.Interfaces.Dependencies.RegistrationRelated;
+using CaptureTheChris.Interfaces.Dependencies.ScopeRelated;
 using LiteDB;
 
 namespace CaptureTheChris.Flags
 {
     using Properties;
 
-    public class FlagChecker
+    public class FlagChecker : 
+        IAsImplementedInterfacesDependency, ISingleInstanceDependency, IFlagChecker
     {
         public bool SubmitFlag(string flag)
         {
@@ -21,21 +25,21 @@ namespace CaptureTheChris.Flags
 
                 Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
 
-                savedFlags.IsEnigmaWon = flag == Resources.FlagEnigma;
-                savedFlags.IsHangmanWon = flag == Resources.FlagHangman;
-                savedFlags.IsSudokuWon = flag == Resources.FlagSudoku;
-                savedFlags.IsTriviaWon = flag == Resources.FlagTrivia;
-                savedFlags.IsGuessNumberWon = flag == Resources.FlagGuessNumber;
-                savedFlags.IsProjectEulerWon = flag == Resources.FlagProjectEuler;
-                savedFlags.IsSimonSaysWon = flag == Resources.FlagSimonSays;
-                savedFlags.IsFoosballWon = flag == Resources.FlagFoosball;
-                savedFlags.IsGerritWon = flag == Resources.FlagGerrit;
-                savedFlags.IsOrigamiWon = flag == Resources.FlagOrigami;
-                savedFlags.IsCaveWon = flag == Resources.FlagCave;
+                if (flag == Resources.FlagEnigma) savedFlags.IsEnigmaWon = true;
+                if (flag == Resources.FlagHangman) savedFlags.IsHangmanWon = true;
+                if (flag == Resources.FlagSudoku) savedFlags.IsSudokuWon = true;
+                if (flag == Resources.FlagTrivia) savedFlags.IsTriviaWon = true;
+                if (flag == Resources.FlagGuessNumber) savedFlags.IsGuessNumberWon = true;
+                if (flag == Resources.FlagProjectEuler) savedFlags.IsProjectEulerWon = true;
+                if (flag == Resources.FlagSimonSays) savedFlags.IsSimonSaysWon = true;
+                if (flag == Resources.FlagFoosball) savedFlags.IsFoosballWon = true;
+                if (flag == Resources.FlagGerrit) savedFlags.IsGerritWon = true;
+                if (flag == Resources.FlagOrigami) savedFlags.IsOrigamiWon = true;
+                if (flag == Resources.FlagCave) savedFlags.IsCaveWon = true;
                 
-                savedFlags.IsCarWon = flag == Resources.FlagCar;
-                savedFlags.IsMetroWon = flag == Resources.FlagMetro;
-                savedFlags.IsCakeWon = flag == Resources.FlagCake;
+                if (flag == Resources.FlagCar) savedFlags.IsCarWon = true;
+                if (flag == Resources.FlagMetro) savedFlags.IsMetroWon = true;
+                if (flag == Resources.FlagCake) savedFlags.IsCakeWon = true;
 
                 flags.Delete(f => true);
                 flags.Insert(savedFlags);
@@ -54,5 +58,28 @@ namespace CaptureTheChris.Flags
 
             return false;
         }
+
+        public int GetCurrentFlagsCount()
+        {
+            var currentFlagCount = 0;
+            
+            using(var db = new LiteDatabase(Resources.FlagsPath))
+            {
+                var flags = db.GetCollection<Flags>(nameof(Flags));
+
+                Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
+
+                var properties = typeof(Flags).GetProperties();
+                currentFlagCount +=
+                    (from property in properties
+                        let value = property.GetValue(savedFlags)
+                        where property.PropertyType == typeof(bool) && property.Name.Contains("Won")
+                        select (bool) value).Count(isWon => isWon);
+            }
+
+            return currentFlagCount;
+        }
+        
+        public int GetTotalFlagCount => 14;
     }
 }

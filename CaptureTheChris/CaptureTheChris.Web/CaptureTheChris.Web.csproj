@@ -146,6 +146,7 @@
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CaveController.cs" />
     <Compile Include="Controllers\EnigmaController.cs" />
+    <Compile Include="Controllers\FlagsControllers.cs" />
     <Compile Include="Controllers\FoosballController.cs" />
     <Compile Include="Controllers\GerritController.cs" />
     <Compile Include="Controllers\MetroController.cs" />
@@ -168,6 +169,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EnigmaModel.cs" />
+    <Compile Include="Models\FlagsModel.cs" />
     <Compile Include="Models\GameModel.cs" />
     <Compile Include="Models\HangmanModel.cs" />
     <Compile Include="Models\SimonSaysModel.cs" />
@@ -259,6 +261,8 @@
     <Content Include="Views\Cave\Index.cshtml" />
     <Content Include="Views\Enigma\Index.cshtml" />
     <Content Include="Views\Enigma\_EnigmaGame.cshtml" />
+    <Content Include="Views\Flags\Index.cshtml" />
+    <Content Include="Views\Flags\_Flags.cshtml" />
     <Content Include="Views\Foosball\Index.cshtml" />
     <Content Include="Views\Gerrit\Index.cshtml" />
     <Content Include="Views\GuessNumber\Index.cshtml" />

@@ -152,6 +152,7 @@
     <Compile Include="Controllers\OrigamiController.cs" />
     <Compile Include="Controllers\SimonSaysController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Filters\CakeTaskFilter.cs" />
     <Compile Include="Filters\CarTaskFilter.cs" />
     <Compile Include="Filters\MetroTaskFilter.cs" />
@@ -269,10 +270,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Flag.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TasksBack.cshtml" />
     <Content Include="Views\SimonSays\Index.cshtml" />
     <Content Include="Views\SimonSays\_SimonSaysGame.cshtml" />
     <Content Include="Views\Sudoku\Index.cshtml" />
     <Content Include="Views\Tasks\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Trivia\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

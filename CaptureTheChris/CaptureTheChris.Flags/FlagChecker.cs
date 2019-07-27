@@ -81,5 +81,17 @@ namespace CaptureTheChris.Flags
         }
         
         public int GetTotalFlagCount => 14;
+
+        public Flags GetAllFlagStatuses()
+        {
+            using (var db = new LiteDatabase(Resources.FlagsPath))
+            {
+                var flags = db.GetCollection<Flags>(nameof(Flags));
+
+                Flags savedFlags = flags.FindOne(f => true) ?? new Flags();
+
+                return savedFlags;
+            }
+        }
     }
 }

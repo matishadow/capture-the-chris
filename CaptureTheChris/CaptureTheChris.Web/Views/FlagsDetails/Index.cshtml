@@ -1,0 +1,16 @@
+@model CaptureTheChris.Web.Models.FlagsDetailsModel
+
+
+<div class="container pp-container h3">
+    @foreach (var keyValue in Model.Flags)
+    {
+        <div class="row">
+            <div class="col">
+                @keyValue.Key
+            </div>
+            <div class="col">
+                @keyValue.Value
+            </div>
+        </div>
+    }
+</div>

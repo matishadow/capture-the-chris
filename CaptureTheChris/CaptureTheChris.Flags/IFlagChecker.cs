@@ -5,5 +5,6 @@ namespace CaptureTheChris.Flags
         bool SubmitFlag(string flag);
         int GetCurrentFlagsCount();
         int GetTotalFlagCount { get; }
+        Flags GetAllFlagStatuses();
     }
 }

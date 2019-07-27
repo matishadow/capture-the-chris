@@ -13,9 +13,14 @@
     padding: 2rem 1rem;
 }
 
+.sudoku-board {
+    max-width: 400px;
+}
+
 .sudoku-text-box {
-    max-width: 45px;
-    max-height: 45px;
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
     display: inline-block;
 }
 

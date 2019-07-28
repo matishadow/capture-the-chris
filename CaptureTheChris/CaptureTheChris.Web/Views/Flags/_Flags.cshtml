@@ -1,0 +1,45 @@
+@model CaptureTheChris.Web.Models.FlagsModel
+
+<div class="row mt-lg-3">
+    <div class="col">
+        <h3>Progres</h3>
+    </div>
+</div>
+<div class="row text-center mt-lg-1">
+    <div class="col">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="@Model.CurrentFlagCount" style="width: @(Model.CurrentFlagCount * 100 / Model.TotalFlagCount)%"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row align-items-end mt-lg-4 text-center text-break">
+    <div class="col">
+        @if (Model.CurrentFlagCount == Model.TotalFlagCount)
+        {
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4>
+                    <b>Gratulacje! Karta podarunkowa do Amazon to: XXX <br/></b>
+                    <b>Do zobaczenia!</b>
+                </h4>
+            </div>
+        }
+        @if (Model.WasLastSubmitSuccessful != null && (bool) Model.WasLastSubmitSuccessful && Model.CurrentFlagCount != Model.TotalFlagCount)
+        {
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4>
+                    <b>Dobrze!</b>
+                </h4>
+            </div>
+        }
+        else if (Model.WasLastSubmitSuccessful != null && (bool) !Model.WasLastSubmitSuccessful)
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Nope @string.Join(" ", Enumerable.Repeat("nope", 13)).</strong>
+            </div>
+        }
+    </div>
+</div>

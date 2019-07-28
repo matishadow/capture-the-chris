@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture the Chris</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryunob")
+</head>
+<body>
+
+<div class="container pp-container body-content">
+    <div class="jumbotron text-center">
+        <h1>Capture the Chris</h1>
+    </div>
+    @RenderBody()
+    <footer>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

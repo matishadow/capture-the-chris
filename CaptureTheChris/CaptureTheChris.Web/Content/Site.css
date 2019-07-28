@@ -1,0 +1,112 @@
+.pp-container {
+    max-width: 650px;
+}
+
+.slider-max-width {
+    width: 100%;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    margin-top: 1rem;
+
+    padding: 2rem 1rem;
+}
+
+.sudoku-board {
+    max-width: 440px;
+}
+
+.sudoku-text-box {
+    width: 100%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    display: inline-block;
+}
+
+.no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.enigma-field {
+   min-height: 70px; 
+}
+
+.simon-says-field {
+    width: 50%;
+    padding-top: 50%; /* 1:1 Aspect Ratio */
+}
+
+.enigma-color-0 {
+    background-color: purple;
+}
+
+.enigma-color-1 {
+    background-color: red;
+}
+
+.enigma-color-2 {
+    background-color: green;
+}
+
+.enigma-color-3, .color-light-yellow {
+    background-color: yellow;
+}
+
+.enigma-color-4 {
+    background-color: cyan;
+}
+
+.enigma-color-5 {
+    background-color: navy;
+}
+
+.enigma-color-6 {
+    background-color: pink;
+}
+
+.enigma-color-7 {
+    background-color: orange;
+}
+
+.color-light-blue {
+    background-color: #4040ff;
+}
+
+.color-light-red {
+    background-color: #ff4040;
+}
+
+.color-light-green {
+    background-color: lawngreen;
+}
+
+.color-dark-blue {
+    background-color: #000060;
+}
+
+.color-dark-yellow {
+    background-color: #606000;
+}
+
+.color-dark-red {
+    background-color: #600000;
+}
+
+.color-dark-green {
+    background-color: darkgreen;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.answer{
+    color: #333;
+    border-color: #333;
+    text-indent: -9999px;
+    cursor: default;
+}
+

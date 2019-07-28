@@ -1,0 +1,22 @@
+@model dynamic
+
+<div class="row align-items-end mt-lg-4 text-center text-break">
+    <div class="col">
+        @if (Model.IsWon)
+        {
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4>
+                    <b>Flaga: @Model.Flag</b>
+                </h4>
+            </div>
+        }
+        else if (Model.WasLastTrySuccessful != null && (bool) !Model.WasLastTrySuccessful)
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Nope @string.Join(" ", Enumerable.Repeat("nope", 13)).</strong>
+            </div>
+        }
+    </div>
+</div>

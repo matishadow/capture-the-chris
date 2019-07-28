@@ -1,0 +1,20 @@
+﻿@using CaptureTheChris.Trivia
+@model CaptureTheChris.Web.Models.TriviaModel
+
+<div class="container pp-container">
+    <div class="row text-center mt-lg-5">
+        <div class="col">
+            <h3>
+                <b>Na pewno znasz odpowiedź na te proste pytania!</b>
+            </h3>
+        </div>
+    </div>
+
+    <div id="trivia-game">
+        @Html.Partial("_TriviaGame")
+    </div>
+
+    <div id="flag-placeholder"></div>
+
+    @Html.Partial("_TasksBack")
+</div>

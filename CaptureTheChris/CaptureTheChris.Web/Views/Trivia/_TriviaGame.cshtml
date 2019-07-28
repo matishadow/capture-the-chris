@@ -1,0 +1,40 @@
+﻿@using CaptureTheChris.Trivia
+@model CaptureTheChris.Web.Models.TriviaModel
+
+@using (Ajax.BeginForm("Answer", "Trivia", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "trivia-game"
+}, new {@class = "form", @autocomplete = "off"}))
+{
+    foreach (QuestionAnswerResult questionAnswerResult in Model.QuestionAnswerResults)
+    {
+        <div class="form-group">
+            <label for="answers">@questionAnswerResult.Question</label>
+            <input type="text" class="form-control" id="answers" name="answers" value="@questionAnswerResult.Answer">
+            @if (questionAnswerResult.Result != null && (bool) !questionAnswerResult.Result)
+            {
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Nope @string.Join(" ", Enumerable.Repeat("nope", 13)).</strong>
+                </div>
+            }
+            else if (questionAnswerResult.Result != null && (bool) questionAnswerResult.Result)
+            {
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <b>Ok!</b>
+                </div>
+            }
+        </div>
+    }
+
+    if (Model.IsWon)
+    {
+        @Html.Partial("_Flag")
+    }
+
+    <div class="form-group">
+        <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="Wyślij"/>
+    </div>
+}

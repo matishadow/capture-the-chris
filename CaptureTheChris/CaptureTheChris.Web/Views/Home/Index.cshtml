@@ -1,0 +1,33 @@
+﻿@model dynamic
+
+<div class="container pp-container">
+    <div class="row text-justify mt-lg-3">
+        <div class="col">
+            <h4>
+                <b>
+                    Zwykle to jest tak: Ktoś ma urodziny. Robimy mu prezent. On go dostaje.
+                    I tyle. Koniec historii. <br>
+                    Tym razem tak nie będzie. Tym razem, żeby nie było zbyt łatwo, 
+                    aby dostać swój prezent musisz wprowadzić wszystkie zdobyte flagi! <br>
+                    Flagi otrzymasz za rozwiązane zadanka. 
+                    Część jest wirtualna, część nie, ale wszystkie są fajne, naprawdę!
+                    
+                    <br/>
+                    Powodzenia Krzyś!
+                </b>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row mt-lg-3 h3">
+        <div class="col">
+            @Html.ActionLink("Zadanka", "Index", "Tasks")
+        </div>
+    </div>
+
+    <div class="row mt-lg-3 h3">
+        <div class="col">
+            @Html.ActionLink("Flagi", "Index", "Flags")
+        </div>
+    </div>
+</div>

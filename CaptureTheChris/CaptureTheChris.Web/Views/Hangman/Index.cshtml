@@ -1,0 +1,33 @@
+﻿@model CaptureTheChris.Web.Models.HangmanModel
+
+<div class="container pp-container">
+    
+    <div id="hangman-game">
+        @Html.Partial("_HangmanGame")
+    </div>
+
+    @using (Ajax.BeginForm("Answer", "Hangman", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "hangman-game",
+        AllowCache = true,
+        OnComplete = "clearTextBox"
+    }, new {@class = "form", @autocomplete = "off"}))
+    {
+        <div class="form-group">
+            <label for="answer">Zgaduj literkę albo całe słowo:</label>
+            <input type="text" class="form-control" id="answer" name="answer">
+        </div>
+        <div class="form-group">
+            <input class="btn btn-outline-primary btn-lg btn-block" id="send" type="submit" value="Wyślij"/>
+        </div>
+    }
+    
+    @Html.Partial("_TasksBack")
+</div>
+
+<script type="text/javascript">
+    var clearTextBox = function() {
+        $("#answer").val('');
+    };
+</script>

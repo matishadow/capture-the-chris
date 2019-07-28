@@ -4,7 +4,7 @@
     <div class="row text-center mt-lg-5">
         <div class="col">
             <h3>
-                <b>Spróbuj szczęścia zgadując liczbę od 0 do 100.</b>
+                <b>Spróbuj szczęścia zgadując liczbę od 0 do 30.</b>
             </h3>
         </div>
     </div>
@@ -13,7 +13,8 @@
     @using (Ajax.BeginForm("Answer", "GuessNumber", new AjaxOptions
     {
         InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "flag-placeholder"
+        UpdateTargetId = "flag-placeholder",
+        OnComplete = "clearTextBox"
     }, new {@class = "form", @autocomplete = "off"}))
     {
         <div class="form-group">
@@ -30,3 +31,8 @@
     @Html.Partial("_TasksBack")
 </div>
 
+<script type="text/javascript">
+    var clearTextBox = function() {
+        $("#answer").val('');
+    };
+</script>

@@ -23,7 +23,7 @@ namespace CaptureTheChris.GuessNumber
 
         public override void StartGame()
         {
-            numberToGuess = randomNumberGenerator.GetRandomInteger(100);
+            numberToGuess = randomNumberGenerator.GetRandomInteger(30);
 
             IsRunning = true;
             IsWon = false;

@@ -12,7 +12,7 @@ namespace CaptureTheChris.Time
     {
         public ZonedDateTime GetDateTime()
         {
-            LocalDateTime localDateTime = new DateTime(2019, 7, 29, 15, 30, 0).ToLocalDateTime();
+            LocalDateTime localDateTime = new DateTime(2019, 7, 28, 15, 30, 0).ToLocalDateTime();
             
             ZonedDateTime zonedDateTime = localDateTime.InZoneLeniently(PolandTimeChecker.PolandZone);
 

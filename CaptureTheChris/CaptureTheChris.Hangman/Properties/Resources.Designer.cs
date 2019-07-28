@@ -61,58 +61,17 @@ namespace CaptureTheChris.Hangman.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to information
-        ///available
-        ///copyright
-        ///university
-        ///management
-        ///international
-        ///development
-        ///education
-        ///community
-        ///technology
-        ///following
-        ///resources
-        ///including
-        ///directory
-        ///government
-        ///department
-        ///description
-        ///insurance
-        ///different
-        ///categories
-        ///conditions
-        ///accessories
-        ///september
-        ///questions
-        ///application
-        ///financial
-        ///equipment
-        ///performance
-        ///experience
-        ///important
-        ///activities
-        ///additional
-        ///something
-        ///professional
-        ///committee
-        ///washington
-        ///california
-        ///reference
-        ///companies
-        ///computers
-        ///president
-        ///australia
-        ///discussion
-        ///entertainment
-        ///agreement
-        ///marketing
-        ///association
-        ///coll [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to bejbs
+        ///twardki
+        ///foobar
+        ///loffki nieco
+        ///owsianeczka
+        ///ptysie
+        ///czarny makaron.
         /// </summary>
-        internal static string google_10000_english_usa_no_swears_long {
+        internal static string some_words {
             get {
-                return ResourceManager.GetString("google_10000_english_usa_no_swears_long", resourceCulture);
+                return ResourceManager.GetString("some_words", resourceCulture);
             }
         }
     }

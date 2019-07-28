@@ -21,7 +21,7 @@ namespace CaptureTheChris.Hangman
 
         private void LoadWordListFromResources()
         {
-            string asOneString = Resources.google_10000_english_usa_no_swears_long;
+            string asOneString = Resources.some_words;
 
             WordList = asOneString.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
         }

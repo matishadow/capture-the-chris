@@ -64,9 +64,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\google-10000-english-usa-no-swears-long.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CaptureTheChris.Flags\CaptureTheChris.Flags.csproj">
       <Project>{eef3ac6b-dee0-4d6e-9403-cab76b7984df}</Project>
       <Name>CaptureTheChris.Flags</Name>
@@ -83,6 +80,10 @@
       <Project>{dea19e8d-b035-4faf-a6ee-757e808ee225}</Project>
       <Name>CaptureTheChris.Randomness</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\some-words.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

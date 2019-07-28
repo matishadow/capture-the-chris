@@ -178,7 +178,7 @@
     <value>"…​ jest mą siostrą, strumień bratem, A każde z żywych stworzeń to mój druh,"</value>
   </data>
   <data name="Question6" xml:space="preserve">
-    <value>Kim jest Magda w kaputrze?</value>
+    <value>Kim jest Magda w kapturze?</value>
   </data>
   <data name="Question7" xml:space="preserve">
     <value>Co jedzą karasie?</value>
@@ -187,6 +187,6 @@
     <value>Czego nie należy łączyć z wódką?</value>
   </data>
   <data name="Question9" xml:space="preserve">
-    <value>Jakiej funkcji należy użyć jak coś nie działa w Bundlach?</value>
+    <value>Jakiej funkcji użyć jak coś nie działa w Bundlach?</value>
   </data>
 </root>

@@ -176,6 +176,7 @@
     <Compile Include="Models\HangmanModel.cs" />
     <Compile Include="Models\SimonSaysModel.cs" />
     <Compile Include="Models\TasksModel.cs" />
+    <Compile Include="Models\TriviaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -284,6 +285,7 @@
     <Content Include="Views\Tasks\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Trivia\Index.cshtml" />
+    <Content Include="Views\Trivia\_TriviaGame.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

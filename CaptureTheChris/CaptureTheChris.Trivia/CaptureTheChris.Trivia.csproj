@@ -39,6 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITriviaGame.cs" />
+    <Compile Include="QuestionAnswerResult.cs" />
+    <Compile Include="QuestionResult.cs" />
     <Compile Include="TriviaAnswers.cs" />
     <Compile Include="TriviaGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

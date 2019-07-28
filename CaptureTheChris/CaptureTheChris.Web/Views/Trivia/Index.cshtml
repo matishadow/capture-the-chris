@@ -1,4 +1,5 @@
-﻿@model CaptureTheChris.Trivia.ITriviaGame
+﻿@using CaptureTheChris.Trivia
+@model CaptureTheChris.Web.Models.TriviaModel
 
 <div class="container pp-container">
     <div class="row text-center mt-lg-5">
@@ -9,26 +10,11 @@
         </div>
     </div>
 
-
-    @using (Ajax.BeginForm("Answer", "Trivia", new AjaxOptions
-    {
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "flag-placeholder"
-    }, new {@class = "form", @autocomplete = "off"}))
-    {
-        foreach (string question in Model.Questions)
-        {
-            <div class="form-group">
-                <label for="answers">@question</label>
-                <input type="text" class="form-control" id="answers" name="answers">
-            </div>
-        }
-        <div class="form-group">
-            <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="Wyślij"/>
-        </div>
-    }
+    <div id="trivia-game">
+        @Html.Partial("_TriviaGame")
+    </div>
 
     <div id="flag-placeholder"></div>
-    
+
     @Html.Partial("_TasksBack")
 </div>

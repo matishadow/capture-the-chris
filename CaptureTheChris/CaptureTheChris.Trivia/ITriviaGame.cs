@@ -9,6 +9,7 @@ namespace CaptureTheChris.Trivia
         IList<string> Questions { get; }
         void StartGame();
         bool TryAnswer(IList<string> answers);
+        bool TryAnswer(IList<string> answers, out IList<QuestionResult> questionResults);
         string GetFlag();
     }
 }

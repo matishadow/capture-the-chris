@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -16,18 +17,31 @@ namespace CaptureTheChris.Trivia
         private const string AnswerResourceKey = "Answer";
         private const string QuestionResourceKey = "Question";
 
-        private readonly IList<string> resourceAnswers;
+        private readonly SortedDictionary<int, QuestionAnswerResult> dictionary =
+            new SortedDictionary<int, QuestionAnswerResult>();
 
         public TriviaGame() : base(Flags.Properties.Resources.FlagTrivia)
         {
-            resourceAnswers = LoadFromResources(AnswerResourceKey);
-            Questions = LoadFromResources(QuestionResourceKey);
+            IList<string> answers = LoadFromResources(AnswerResourceKey);
+            IList<string> questions = LoadFromResources(QuestionResourceKey);
+
+            for (var i = 0; i < answers.Count; i++)
+            {
+                dictionary.Add(i, new QuestionAnswerResult
+                {
+                    Answer = answers[i],
+                    Question = questions[i]
+                });
+            }
         }
 
         public override bool IsWon { get; protected set; }
         public override bool IsRunning { get; protected set; }
-        
-        public IList<string> Questions { get; }
+
+        public IList<string> Questions
+        {
+            get { return dictionary.Values.Select(value => value.Question).ToList(); }
+        }
 
         public override void StartGame()
         {
@@ -37,6 +51,8 @@ namespace CaptureTheChris.Trivia
 
         public bool TryAnswer(IList<string> answers)
         {
+            var resourceAnswers = dictionary.Values.Select(value => value.Answer).ToList();
+                
             if (answers.Count != resourceAnswers.Count) return false;
             answers = answers.Select(a => a.ToLower()).ToList();
 
@@ -47,6 +63,27 @@ namespace CaptureTheChris.Trivia
             IsWon = true;
 
             return true;
+        }
+
+        public bool TryAnswer(IList<string> answers, out IList<QuestionResult> questionResults)
+        {
+            var result = new List<QuestionResult>();
+
+            for (int i = 0; i < dictionary.Count; i++)
+            {
+                var wasAnswerValid = answers[i] != string.Empty
+                    ? answers[i].ToLower().Contains(dictionary[i].Answer)
+                    : (bool?) null;
+                
+                result.Add(new QuestionResult
+                {
+                    Question = dictionary[i].Question,
+                    Result = wasAnswerValid
+                });
+            }
+
+            questionResults = result;
+            return TryAnswer(answers);
         }
 
         private IList<string> LoadFromResources(string thingToLoad)
